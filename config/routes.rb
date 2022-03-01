@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  get 'users/index'
+  get 'users/show'
+  get 'users/edit'
+  get 'users/update'
   devise_for :users
   root to: 'pages#home'
-    resources :users, only: [:index, :show, :new] do
+    resources :users, only: [:index, :show, :new, :edit, :update] do
        resources :requests, only: [:create]
     end
     resources :requests, only: [:index, :update] do
