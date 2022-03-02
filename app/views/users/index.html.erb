@@ -1,11 +1,13 @@
+<div class= "container">
 <h1> Profesionales </h1>
 
-<% @users_profesionals.each do |user| %>
-  <div class="card-info">
-        <h2><%= link_to user.first_name, user_path(user) %></h2>
-        <p><%= user.job %></p>
-        <p><%= user.city %></p>
-        <br>
-        <%= link_to 'ver', users_path(user.id), class: 'btn btn-default' %>
-  </div>
-<% end %>
+  <% @users_profesionals.each do |user| %>
+    <div class="card-info">
+          <h2><%= user.first_name %></h2>
+          <p><%= user.job %></p>
+          <p><%= user.city %></p>
+          <br>
+          <%= link_to 'mas detalles',  user_path(user), class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

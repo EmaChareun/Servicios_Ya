@@ -1,3 +1,18 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
- <%= link_to 'solicitar', new_user_request_path(@user.id), class: 'btn btn-default' %>
+<div class= "container">
+  <div class="card-trip-infos">
+        <div>
+          <h2><%= @user.first_name %></h2>
+          <ul>
+            <li> <%= @user.job %> </li>
+            <li> <%= @user.city %> </li>
+            <li> <%= @user.phone_number %> </li>
+          </ul>
+          <br>
+          <br>
+          <h2>Reseñas</h2>
+          <br>
+          <br>
+          <h2>Trabajos realizados</h2>
+  </div>
+  <%= link_to 'solicitar', new_user_request_path(@user.id), class: 'btn btn-primary' %>
+</div>
