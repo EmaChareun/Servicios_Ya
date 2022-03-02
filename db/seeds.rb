@@ -11,9 +11,9 @@ require 'faker'
 lista_oficio = ["A/A", "Albañil",	"Arquitecto",	"Autos",	"Belleza",	"Bienestar",	"Carpintero",	"Cerrajero", "Colocador", "Control de plagas", "Cuidadores",	"Decorador",	"Electricista",	"Gasista",	"Herrero",	"Jardinero",	"Limpieza",	"Mascotas",	"Mudanzas",	"Piletas", "Pintor",	"Plomero", "Reformas",	"Seguridad", "Tapicero",	"Técnico"]
 
 10.times do |i|
-  User.create(email: "client#{i}@example.com", password: "111111", password_confirmation: "111111", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, city: "Buenos Aires", phone_number: Faker::PhoneNumber.cell_phone, role: "cliente", job: ["clientes"], avatar: Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg") )
+  User.create(email: "client#{i}@example.com", password: "111111", password_confirmation: "111111", first_name: "cliente#{i}", last_name: Faker::Name.last_name, city: "Buenos Aires", phone_number: Faker::PhoneNumber.cell_phone, role: "cliente", job: ["clientes"], avatar: Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg") )
 end
 
 10.times do |i|
-  User.create(email: "profesional#{i}@example.com", password: "111111", password_confirmation: "111111", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, city: "Buenos Aires", phone_number: Faker::PhoneNumber.cell_phone, role: "profesional", job: lista_oficio.sample(3), validation: random_boolean = [true, false].sample, avatar: Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg") )
+  User.create(email: "profesional#{i}@example.com", password: "111111", password_confirmation: "111111", first_name: "profesinal#{i}", last_name: Faker::Name.last_name, city: "Buenos Aires", phone_number: Faker::PhoneNumber.cell_phone, role: "profesional", job: lista_oficio.sample(3), validation: random_boolean = [true, false].sample, avatar: Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg") )
 end
