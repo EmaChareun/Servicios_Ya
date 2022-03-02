@@ -1,8 +1,13 @@
 class RequestsController < ApplicationController
-  before_action :set_user, only: %i[new create]
+  before_action :set_user, only: %i[new]
 
   def index
-    @requests = Request.all
+    if current_user.role == "profesional"
+      @requests = Request.where(professional_id: current_user.id)
+      @requests = Request.where(user_id: current_user.id)
+    else
+      @requests = Request.where(user_id: current_user.id)
+    end
   end
 
   def new
@@ -11,7 +16,7 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
-    @request.user = @user
+    @request.user_id = current_user.id
     if @request.save
       redirect_to requests_path
     else
@@ -28,7 +33,7 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:title, :city, :detail, :image)
+    params.require(:request).permit(:title, :city, :detail, :image, :professional_id)
   end
 
   def set_user
