@@ -3,7 +3,7 @@ class RequestsController < ApplicationController
 
   def index
     if current_user.role == "profesional"
-      @requests = Request.where(professional_id: current_user.id)
+      @my_requests = Request.where(professional_id: current_user.id)
       @requests = Request.where(user_id: current_user.id)
     else
       @requests = Request.where(user_id: current_user.id)
