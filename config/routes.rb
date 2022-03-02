@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
-  get 'users/edit'
-  get 'users/update'
   devise_for :users
   root to: 'pages#home'
 
@@ -10,7 +6,7 @@ Rails.application.routes.draw do
     resources :requests, only: [:new, :create]
 
   end
-  resources :requests, only: [:index, :update] do
+  resources :requests, only: [:index, :update, :edit] do
     resources :reviews, only: [:create]
   end
 
