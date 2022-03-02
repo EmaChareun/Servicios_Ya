@@ -1,9 +1,20 @@
 <div class="container">
-<br>
+  <br>
   <h1>Mis Solicitudes</h1>
   <br>
   <%# <<% if current_user.role == "cliente" %>
-  <%= @requests.each do |request| %>
+  <% @my_requests.each do |request| %>
+  <div>
+    <p> <%= "#{request.title}" %> </p>
+    <p> <%= "#{request.city}" %> </p>
+    <p> <%= "#{request.detail}" %> </p>
+    <p> <%= "#{request.image}" %> </p>
+  </div>
+  <br>
+  <% end %>
+  <br>
+  <h1>Solicitudes Realizadas</h1>
+    <% @requests.each do |request| %>
   <div>
     <p> <%= "#{request.title}" %> </p>
     <p> <%= "#{request.city}" %> </p>
