@@ -1,0 +1,7 @@
+<div class="container col-4">
+  <%= simple_form_for [@request, @review] do |f| %>
+    <%= f.input :content, placeholder: "Escribe tu reseña aquí" %>
+    <%= f.input :rating, collection: 1..5, prompt: "Agrega un rating" %>
+    <%= f.submit "Agregar reseña", class: 'btn btn-default'%>
+  <% end %>
+</div>
