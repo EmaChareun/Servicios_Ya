@@ -1,26 +1,40 @@
 <div class="container">
-  <br>
-  <h1>Mis Solicitudes</h1>
-  <br>
-  <%# <<% if current_user.role == "cliente" %>
-  <% @my_requests.each do |request| %>
-  <div>
-    <p> <%= "#{request.title}" %> </p>
-    <p> <%= "#{request.city}" %> </p>
-    <p> <%= "#{request.detail}" %> </p>
-    <p> <%= "#{request.image}" %> </p>
-  </div>
-  <br>
-  <% end %>
-  <br>
-  <h1>Solicitudes Realizadas</h1>
-    <% @requests.each do |request| %>
-  <div>
-    <p> <%= "#{request.title}" %> </p>
-    <p> <%= "#{request.city}" %> </p>
-    <p> <%= "#{request.detail}" %> </p>
-    <p> <%= "#{request.image}" %> </p>
-  </div>
-  <br>
+
+  <%  if current_user.role == "profesional" %>
+    <br>
+    <h1>Mis Solicitudes</h1>
+    <br>
+    <% @my_requests.each do |request| %>
+      <div>
+        <p> <%= "#{request.title}" %> </p>
+        <p> <%= "#{request.city}" %> </p>
+        <p> <%= "#{request.detail}" %> </p>
+        <p> <%= "#{request.image}" %> </p>
+      </div>
+    <% end %>
+    <br>
+        <br>
+    <h1>Solicitudes Realizadas</h1>
+      <% @requests.each do |request| %>
+    <div>
+      <p> <%= "#{request.title}" %> </p>
+      <p> <%= "#{request.city}" %> </p>
+      <p> <%= "#{request.detail}" %> </p>
+      <p> <%= "#{request.image}" %> </p>
+    </div>
+    <br>
+    <% end %>
+  <%  else current_user.role == "cliente" %>
+    <br>
+    <h1>Solicitudes Realizadas</h1>
+      <% @requests.each do |request| %>
+    <div>
+      <p> <%= "#{request.title}" %> </p>
+      <p> <%= "#{request.city}" %> </p>
+      <p> <%= "#{request.detail}" %> </p>
+      <p> <%= "#{request.image}" %> </p>
+    </div>
+    <br>
+    <% end %>
   <% end %>
 </div>
