@@ -6,9 +6,9 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :requests
   validates :first_name, presence: true
-  # validates :last_name, presence: true
-  # validates :phone_number, presence: true
-  # validates :city, presence: true
-  # validates :role, presence: true
-  # validates :job, presence: true
+  validates :last_name, presence: true
+  validates :phone_number, presence: true
+  validates :city, presence: true
+  validates :role, presence: true
+  validates :job, presence: true
 end

@@ -15,5 +15,5 @@ lista_oficio = ["A/A", "Albañil",	"Arquitecto",	"Autos",	"Belleza",	"Bienestar"
 end
 
 10.times do |i|
-  User.create(email: "profesional#{i}@example.com", password: "111111", password_confirmation: "111111", first_name: "profesinal#{i}", last_name: Faker::Name.last_name, city: "Buenos Aires", phone_number: Faker::PhoneNumber.cell_phone, role: "profesional", job: lista_oficio.sample(3), validation: random_boolean = [true, false].sample, avatar: Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg") )
+  User.create(email: "profesional#{i}@example.com", password: "111111", password_confirmation: "111111", first_name: "profesional#{i}", last_name: Faker::Name.last_name, city: "Buenos Aires", phone_number: Faker::PhoneNumber.cell_phone, role: "profesional", job: lista_oficio.sample(3), validation: random_boolean = [true, false].sample, avatar: Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg") )
 end
