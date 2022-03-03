@@ -3,7 +3,7 @@
     <%= f.input :title, placeholder: "Servicio Solicitado" %>
     <%= f.input :city, placeholder: "Ciudad" %>
     <%= f.input :detail, placeholder: "Detalles del problema" %>
-    <%= f.input :photo, placeholder: "Fotos" %>
+    <%= f.input :photos, placeholder: "Fotos" %>
     <%= f.input :professional_id, as: :hidden, input_html: { value: "#{@user.id}"} %>
     <%= f.submit "Guardar", class: "btn-default" %>
   <% end %>
