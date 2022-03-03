@@ -2,6 +2,8 @@ class RequestsController < ApplicationController
   before_action :set_user, only: %i[new]
 
   def index
+    @request = policy_scope(Request).where(user: current_user)
+
     if current_user.role == "profesional"
       @my_requests = Request.where(professional_id: current_user.id)
       @requests = Request.where(user_id: current_user.id)
@@ -12,11 +14,13 @@ class RequestsController < ApplicationController
 
   def new
     @request = Request.new
+    authorize @request
   end
 
   def create
     @request = Request.new(request_params)
     @request.user_id = current_user.id
+    authorize @request
     if @request.save
       redirect_to requests_path
     else
@@ -26,6 +30,7 @@ class RequestsController < ApplicationController
 
   def edit
     @request = Request.find(params[:id])
+    authorize @request
   end
 
   def update
@@ -33,7 +38,12 @@ class RequestsController < ApplicationController
     @request.update(request_params)
     redirect_to requests_path(@request)
   end
-
+  def destroy
+    @request = Request.find(params[:id])
+    @request.destroy
+    authorize @request
+    redirect_to requests_path(@request)
+  end
   private
 
   def request_params
