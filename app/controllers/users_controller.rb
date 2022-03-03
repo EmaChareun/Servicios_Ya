@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   def index
-    # @users = policy_scope(User)
+    @users = policy_scope(User)
     if params[:query].present?
       @users = User.where("array_to_string(job, '||') ILIKE ? AND role = 'profesional'", "%#{params[:query]}%")
     else
