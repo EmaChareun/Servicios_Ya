@@ -1,10 +1,10 @@
-class ReviewController < ApplicationController
+class ReviewsController < ApplicationController
   # before_action
 
-  # def new
-  #   @review = Review.new
-  #   authorize @review
-  # end
+  def new
+    @review = Review.new
+    authorize @review
+  end
 
   def create
     @review = Review.new(review_params)
