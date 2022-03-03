@@ -5,10 +5,18 @@
 
   <div class="form-inputs">
 
+    <%= f.input :first_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Nombre" }%>
+    <%= f.input :last_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Apellido" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                input_html: { autocomplete: "Email" }%>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -16,34 +24,32 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :first_name,
+    <%= f.input :city,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "nombre" }%>
-    <%= f.input :last_name,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "Apellido" }%>
-    <%= f.input :city,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "Ciudad" }%>
+                input_html: { autocomplete: "Ciudad" }%>
     <%= f.input :phone_number,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "Telefono" }%>
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Telefono" }%>
     <%= f.input :role,
-                  required: true,
-                  autofocus: true,
-                  collection: ["cliente", "profesional"],
-                  prompt: "Tipo de usuario",
-                  input_html: { autocomplete: "role" }%>
+                required: true,
+                autofocus: true,
+                collection: ["cliente", "profesional"],
+                prompt: "Tipo de usuario",
+                input_html: { autocomplete: "role" }%>
     <%= f.input :job,
-                  required: true,
-                  autofocus: true,
-                  collection: ["A/A", "Albañil",	"Arquitecto",	"Autos",	"Belleza",	"Bienestar",	"Carpintero",	"Cerrajero", "Colocador", "Control de plagas", "Cuidadores",	"Decorador",	"Electricista",	"Gasista",	"Herrero",	"Jardinero",	"Limpieza",	"Mascotas",	"Mudanzas",	"Piletas", "Pintor",	"Plomero", "Reformas",	"Seguridad", "Tapicero",	"Técnico"],
-                  prompt: "Tipo de usuario",
-                  input_html: { autocomplete: "job" }%>
+                required: true,
+                autofocus: true,
+                collection: ["A/A", "Albañil",	"Arquitecto",	"Autos",	"Belleza",	"Bienestar",	"Carpintero",	"Cerrajero", "Colocador", "Control de plagas", "Cuidadores",	"Decorador",	"Electricista",	"Gasista",	"Herrero",	"Jardinero",	"Limpieza",	"Mascotas",	"Mudanzas",	"Piletas", "Pintor",	"Plomero", "Reformas",	"Seguridad", "Tapicero",	"Técnico"],
+                prompt: "Tipo de usuario",
+                input_html: { autocomplete: "job" }%>
+    <%= f.input :photo, as: :file,
+                required: true,
+                autofocus: true,
+                prompt: "Foto de perfil",
+                input_html: { autocomplete: "avatar" }%>
+
   </div>
 
   <div class="form-actions">

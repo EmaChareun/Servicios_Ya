@@ -7,9 +7,9 @@
     <% @my_requests.each do |request| %>
       <div>
         <p> <%= link_to request.title, edit_request_path(request.id) %> </p>
-        <p> <%= "#{request.city}" %> </p>
-        <p> <%= "#{request.detail}" %> </p>
-        <p> <%= "#{request.image}" %> </p>
+        <p> <%= "Ubicacion: #{request.city}" %> </p>
+        <p> <%= "Detalles: #{request.detail}" %> </p>
+        <p> <%= "Fotos: #{request.photo}" %> </p>
       </div>
     <% end %>
     <br>
@@ -17,10 +17,10 @@
     <h1>Solicitudes Realizadas</h1>
       <% @requests.each do |request| %>
     <div>
-      <p> <%= "#{request.title}" %> </p>
-      <p> <%= "#{request.city}" %> </p>
-      <p> <%= "#{request.detail}" %> </p>
-      <p> <%= "#{request.image}" %> </p>
+      <p> <%= link_to request.title, edit_request_path(request.id)  %> </p>
+      <p> <%= "Ubicacion: #{request.city}" %> </p>
+      <p> <%= "Detalles: #{request.detail}" %> </p>
+      <p> <%= "Fotos: #{request.photo}" %> </p>
     </div>
     <br>
     <% end %>
@@ -30,9 +30,9 @@
       <% @requests.each do |request| %>
     <div>
       <p> <%= link_to request.title, edit_request_path(request.id)  %> </p>
-      <p> <%= "#{request.city}" %> </p>
-      <p> <%= "#{request.detail}" %> </p>
-      <p> <%= "#{request.image}" %> </p>
+      <p> <%= "Ubicacion: #{request.city}" %> </p>
+      <p> <%= "Detalles: #{request.detail}" %> </p>
+      <p> <%= "Fotos: #{request.photo}" %> </p>
     </div>
     <br>
     <% end %>
