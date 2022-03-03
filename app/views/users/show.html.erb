@@ -3,7 +3,9 @@
         <div>
           <h2><%= @user.first_name %></h2>
           <ul>
-            <li> <%= @user.job %> </li>
+            <li> Habilidades: <% @user.job.each do |job|%>
+            <%= job %>
+            <% end %> </li>
             <li> <%= @user.city %> </li>
             <li> <%= @user.phone_number %> </li>
           </ul>

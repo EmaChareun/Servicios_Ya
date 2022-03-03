@@ -4,8 +4,10 @@
   <% @users_profesionals.each do |user| %>
     <div class="card-info">
           <h2><%= user.first_name %></h2>
-          <p><%= user.job %></p>
-          <p><%= user.city %></p>
+          <p>Habilidades: <% user.job.each do |job|%>
+            <%= job %>
+            <% end %></p>
+          <p>Ubicacion: <%= user.city %></p>
           <br>
           <%= link_to 'mas detalles',  user_path(user), class: 'btn btn-primary' %>
     </div>
