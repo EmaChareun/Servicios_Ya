@@ -1,15 +1,16 @@
-<div class= "container">
-<h1> Profesionales </h1>
+<div class="container">
+  <h1> Profesionales </h1>
 
-  <% @users_profesionals.each do |user| %>
-    <div class="card-info">
-          <h2><%= user.first_name %></h2>
-          <p>Habilidades: <% user.job.each do |job|%>
-            <%= job %>
-            <% end %></p>
-          <p>Ubicacion: <%= user.city %></p>
-          <br>
-          <%= link_to 'mas detalles',  user_path(user), class: 'btn btn-primary' %>
-    </div>
+  <% @users.each do |user| %>
+  <br>
+  <div class="card-info">
+    <h2><%= user.first_name %></h2>
+    <p>Servicios: <% user.job.each do |job|%>
+      <%= job %>
+      <% end %></p>
+    <p>Ubicación: <%= user.city %></p>
+    <br>
+    <%= link_to 'mas detalles',  user_path(user), class: 'btn btn-primary' %>
+  </div>
   <% end %>
 </div>

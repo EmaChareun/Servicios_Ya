@@ -28,12 +28,14 @@
     <br>
     <h1>Solicitudes Realizadas</h1>
       <% @requests.each do |request| %>
-    <div>
-      <p> <%= link_to request.title, edit_request_path(request.id)  %> </p>
-      <p> <%= "Ubicacion: #{request.city}" %> </p>
-      <p> <%= "Detalles: #{request.detail}" %> </p>
-      <p> <%= "Fotos: #{request.photos}" %> </p>
-    </div>
+      <div class="div">
+        <p> <%= link_to request.title, edit_request_path(request.id)  %> </p>
+        <p> <%= "Ubicacion: #{request.city}" %> </p>
+        <p> <%= "Detalles: #{request.detail}" %> </p>
+        <% request.photos.each do |photo| %>
+           <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end%>
+      </div>
     <br>
     <% end %>
   <% end %>
