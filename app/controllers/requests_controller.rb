@@ -37,7 +37,7 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:title, :city, :detail, :photo, :professional_id)
+    params.require(:request).permit(:title, :city, :detail, :photos, :professional_id)
   end
 
   def set_user
