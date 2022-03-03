@@ -1,6 +1,10 @@
 class ReviewController < ApplicationController
   # before_action
 
+  def show
+    @review = Review.find(params[:id])
+  end
+
   def new
     @review = Review.new
     authorize @review
