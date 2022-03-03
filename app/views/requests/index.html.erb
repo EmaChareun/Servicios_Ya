@@ -9,7 +9,7 @@
         <p> <%= link_to request.title, edit_request_path(request.id) %> </p>
         <p> <%= "Ubicacion: #{request.city}" %> </p>
         <p> <%= "Detalles: #{request.detail}" %> </p>
-        <p> <%= "Fotos: #{request.image}" %> </p>
+        <p> <%= "Fotos: #{request.photo}" %> </p>
       </div>
     <% end %>
     <br>
@@ -20,7 +20,7 @@
       <p> <%= link_to request.title, edit_request_path(request.id)  %> </p>
       <p> <%= "Ubicacion: #{request.city}" %> </p>
       <p> <%= "Detalles: #{request.detail}" %> </p>
-      <p> <%= "Fotos: #{request.image}" %> </p>
+      <p> <%= "Fotos: #{request.photo}" %> </p>
     </div>
     <br>
     <% end %>
@@ -32,9 +32,11 @@
       <p> <%= link_to request.title, edit_request_path(request.id)  %> </p>
       <p> <%= "Ubicacion: #{request.city}" %> </p>
       <p> <%= "Detalles: #{request.detail}" %> </p>
-      <p> <%= "Fotos: #{request.image}" %> </p>
+      <p> <%= "Fotos: #{request.photo}" %> </p>
     </div>
     <br>
     <% end %>
   <% end %>
+    <%= link_to 'hacer una reseña', "#", class: 'btn btn-primary' %>
+  <%= link_to 'volver a busquedas', users_path, class: 'btn btn-primary' %>
 </div>
