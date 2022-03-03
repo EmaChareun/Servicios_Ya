@@ -38,7 +38,12 @@ class RequestsController < ApplicationController
     @request.update(request_params)
     redirect_to requests_path(@request)
   end
-
+  def destroy
+    @request = Request.find(params[:id])
+    @request.destroy
+    authorize @request
+    redirect_to requests_path(@request)
+  end
   private
 
   def request_params
