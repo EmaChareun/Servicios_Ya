@@ -1,7 +1,8 @@
+<div class="container col-6">
 <h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :first_name,
@@ -48,11 +49,11 @@
                 autofocus: true,
                 prompt: "Foto de perfil",
                 input_html: { autocomplete: "avatar" }%>
+    </div>
 
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-  <%= render "devise/shared/links" %>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up" %>
+    </div>
+    <%= render "devise/shared/links" %>
+  <% end %>
+</div>

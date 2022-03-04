@@ -1,9 +1,8 @@
-<div class="container col 6">
+<div class="container col-6">
   <h1> Nueva Solicitud a: <%= @user.first_name %> </h1>
   <p> Habilidades:  <% @user.job.each do |job|%>
             <%= job %>
             <% end %>
-
 
   <%= render 'form', user: @user, request: @request %>
 </div>
