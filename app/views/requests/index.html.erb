@@ -2,14 +2,12 @@
 
   <%  if current_user.role == "profesional" %>
     <br>
-
     <h1>Mis Solicitudes</h1><br>
       <% @my_requests.each do |request| %>
         <div>
           <p> <%= link_to request.title, edit_request_path(request.id) %> </p>
           <p> <%= "Ubicacion: #{request.city}" %> </p>
           <p> <%= "Detalles: #{request.detail}" %> </p>
-          <p> <%= "Fotos: #{request.photos}" %> </p>
         </div>
       <% end %><br>
     <h1>Solicitudes Realizadas</h1>
@@ -18,9 +16,9 @@
           <p> <%= link_to request.title, edit_request_path(request.id)  %> </p>
           <p> <%= "Ubicacion: #{request.city}" %> </p>
           <p> <%= "Detalles: #{request.detail}" %> </p>
-          <p> <%= "Fotos: #{request.photos}" %> </p>
-          <%= request.id %>
-
+          <% request.photos.each do |photo| %>
+           <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+          <% end%>
           <h3>Escribe una reseña del local</h3>
             <%= render '/review/form_review', review: @review, request: request %>
         </div>
@@ -34,11 +32,12 @@
       <p> <%= link_to request.title, edit_request_path(request.id)  %> </p>
       <p> <%= "Ubicacion: #{request.city}" %> </p>
       <p> <%= "Detalles: #{request.detail}" %> </p>
-      <p> <%= "Fotos: #{request.photos}" %> </p>
+      <% request.photos.each do |photo| %>
+           <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end%>
       <h3>Escribe una reseña del local</h3>
         <%= render '/review/form_review', review: @review, request: request %>
     </div>
-
     <br>
     <% end %>
   <% end %>
