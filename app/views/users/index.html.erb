@@ -3,14 +3,12 @@
 
   <% @users.each do |user| %>
   <br>
-  <div class="card-info">
-    <h2><%= user.first_name %></h2>
-    <p>Servicios: <% user.job.each do |job|%>
-      <%= job %>
-      <% end %></p>
-    <p>Ubicación: <%= user.city %></p>
-    <br>
-    <%= link_to 'mas detalles',  user_path(user), class: 'btn btn-primary' %>
-  </div>
+  <h2><%= user.first_name %></h2>
+  <p>Servicios: <% user.job.each do |job|%>
+    <%= job %>
+    <% end %></p>
+  <p>Ubicación: <%= user.city %></p>
+  <%= link_to 'mas detalles',  user_path(user), class: 'btn btn-primary' %>
+  <br>
   <% end %>
 </div>
