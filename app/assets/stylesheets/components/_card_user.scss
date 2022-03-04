@@ -34,3 +34,20 @@
 .card-product {
   display: flex
 }
+
+.card-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
+   .card-profesional{
+      border-radius: 5px;
+      // overflow: hidden;
+      height: 200px;
+      width: 350px;
+      background-color: white;
+      box-shadow: 0 0 15px rgba(49, 49, 49, 0.452);
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+   }
+}
