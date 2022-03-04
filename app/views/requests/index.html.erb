@@ -2,6 +2,7 @@
 
   <%  if current_user.role == "profesional" %>
     <br>
+
     <h1>Mis Solicitudes</h1><br>
       <% @my_requests.each do |request| %>
         <div>
@@ -37,6 +38,7 @@
       <h3>Escribe una reseña del local</h3>
         <%= render '/review/form_review', review: @review, request: request %>
     </div>
+
     <br>
     <% end %>
   <% end %>

@@ -1,15 +1,21 @@
-<div class= "container">
-<h1> Profesionales </h1>
-
-  <% @users_profesionals.each do |user| %>
-    <div class="card-info">
+<div class="container">
+  <br>
+  <h1>Profesionales</h1>
+  <% if @users.blank? %>
+  <p> No se encuentra el profesional </p>
+   <% end %>
+  <br>
+  <% @users.each do |user| %>
+      <div class="card-product">
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
+        <div class="card-product-infos">
           <h2><%= user.first_name %></h2>
-          <p>Habilidades: <% user.job.each do |job|%>
-            <%= job %>
-            <% end %></p>
-          <p>Ubicacion: <%= user.city %></p>
-          <br>
-          <%= link_to 'mas detalles',  user_path(user), class: 'btn btn-primary' %>
-    </div>
-  <% end %>
+          <p>Servicios: <% user.job.each do |job|%>
+          <%= job %>
+          <% end %></p>
+          <p>Ubicación: <%= user.city %></p>
+          <%= link_to 'Detalles',  user_path(user), class: 'btn btn-primary btn-sm mt-2' %>
+        </div>
+      </div>
+    <% end %>
 </div>

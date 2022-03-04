@@ -1,5 +1,41 @@
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/free-photo/empty-red-brick-wall_53876-31790.jpg?w=996);">
+      <h1>Servicios YA</h1>
+
+      <p>Te ayudamos a resolver el problema de tu hogar</p>
+
+<div class="search">
+      <%= form_tag users_path, method: :get do %>
+      <%= text_field_tag :query,
+          params[:query],
+
+    class: "form-control",
+          placeholder: "Busca un servicio"
+        %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end%>
+      </div>
+  </div>
+  <br>
+  <br>
 <div class="container">
-  <h1>Servicios YA</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
-    <%= link_to 'Ver mas profesionales', users_path , class: 'btn btn-primary' %>
+    <div class="card-grid">
+      <% 6.times do %>
+      <% number_rand = rand(0...@users.size)%>
+      <div class="card-profesional">
+        <h2><%= @users[number_rand].first_name %></h2>
+        <p>Servicios: <% @users[number_rand].job.each do |job|%>
+          <%= job %>
+          <% end %></p>
+        <p>Ubicación: <%= @users[number_rand].city %></p>
+        <br>
+        <%= link_to 'mas detalles',  user_path(@users[number_rand].id), class: 'btn btn-primary' %>
+      </div>
+      <% end %>
+    </div>
+    <br>
+    <br>
+  </div>
+  <%= link_to 'Ver todos profesionales', users_path , class: 'btn btn-primary' %>
+<br>
 </div>
