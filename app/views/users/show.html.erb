@@ -1,21 +1,57 @@
 <div class= "container col 6">
-  <div class="card-trip-infos">
-        <div>
-          <h2><%= @user.first_name %></h2>
-          <ul>
-            <li> Habilidades: <% @user.job.each do |job|%>
-            <%= job %>
-            <% end %> </li>
+  <br>
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+          class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title"><%= @user.first_name %></h3>
+          <p class="card-text">
+            <li> Servicios: <% @user.job.each do |job|%>
+              <%= job %>
+              <% end %> </li>
             <li> <%= @user.city %> </li>
             <li> <%= @user.phone_number %> </li>
-          </ul>
-          <br>
-          <br>
-          <h2>Reseñas</h2>
-          <br>
-          <br>
-          <h2>Trabajos realizados</h2>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-  <%= link_to 'solicitar', new_user_request_path(@user.id), class: 'btn btn-primary' %>
-   <%= link_to 'volver a busquedas', users_path, class: 'btn btn-primary' %>
+  <br>
+
+  <h3>Reseñas</h3>
+  <div class="card border-light mb-3" style="max-width: 40rem;">
+    <div class="card-body">
+      <h5 class="card-title">Light card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+
+  <h3>Trabajos Realizados</h3>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%# photos.each do |photo| %>
+          <%#= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <%# end %>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <br>
+  <br>
+  <%= link_to 'Crear solicitud', new_user_request_path(@user.id), class: 'btn btn-primary' %>
+  <%= link_to 'Volver a búsquedas', users_path, class: 'btn btn-primary' %>
 </div>
