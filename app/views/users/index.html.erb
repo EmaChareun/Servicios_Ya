@@ -1,16 +1,18 @@
 <div class="container">
-  <h1> Profesionales </h1>
-
-  <% @users.each do |user| %>
   <br>
-  <div class="card-info">
-    <h2><%= user.first_name %></h2>
-    <p>Servicios: <% user.job.each do |job|%>
-      <%= job %>
-      <% end %></p>
-    <p>Ubicación: <%= user.city %></p>
-    <br>
-    <%= link_to 'mas detalles',  user_path(user), class: 'btn btn-primary' %>
-  </div>
+  <h1>Profesionales</h1>
+  <br>
+  <% @users.each do |user| %>
+   <div class="card-product">
+      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
+      <div class="card-product-infos">
+        <h2><%= user.first_name %></h2>
+        <p>Servicios: <% user.job.each do |job|%>
+        <%= job %>
+        <% end %></p>
+        <p>Ubicación: <%= user.city %></p>
+        <%= link_to 'Detalles',  user_path(user), class: 'btn btn-primary btn-sm mt-2' %>
+      </div>
+    </div>
   <% end %>
 </div>
