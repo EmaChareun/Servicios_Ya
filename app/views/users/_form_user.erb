@@ -1,17 +1,11 @@
 <div class="container col-4">
   <%= simple_form_for [@user] do |f| %>
+    <%= f.input :role, placeholder: "" %>
     <%= f.input :first_name, placeholder: "Nombre" %>
-      <%= f.input :last_name, placeholder: "Apellido" %>
+    <%= f.input :last_name, placeholder: "Apellido" %>
     <%= f.input :city, placeholder: "Dirección" %>
     <%= f.input :phone_number, placeholder: "Número de teléfono" %>
-    <%= f.input :role, placeholder: "" %>
-<<<<<<< HEAD
-    <% if :role == "profesional" %>
-=======
-    <% if @role == "profesional" %>
->>>>>>> 55941422217851bb73a21c1c85a06196463a7ac1
-      <%= f.input :job, placeholder: "Especialidad" %>
-    <% end %>%>
+    <%= f.input :job, placeholder: "Especialidad" %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit "Guardar", class: 'btn btn-default' %>
   <% end %>

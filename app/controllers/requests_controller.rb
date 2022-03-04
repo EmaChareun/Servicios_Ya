@@ -2,6 +2,11 @@ class RequestsController < ApplicationController
   before_action :set_user, only: %i[new]
 
   def index
+    # @review_search = Review.find(params[:request_id])
+    # @review_all = Review.all
+    @request_by = Request.all
+    @review_by = Review.all
+    @review = Review.new
     if current_user.role == "profesional"
       @my_requests = Request.where(professional_id: current_user.id)
       @requests = Request.where(user_id: current_user.id)
@@ -37,7 +42,7 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:title, :city, :detail, :photo, :professional_id)
+    params.require(:request).permit(:title, :city, :detail, :photos, :professional_id)
   end
 
   def set_user

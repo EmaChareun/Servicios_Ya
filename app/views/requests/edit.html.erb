@@ -1,14 +1,6 @@
 <div class="container col-6">
   <br>
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <div class="titulo col-8 row justify-content-center" style="margin: 0 auto">
-=======
   <div class="titulo col-4 row justify-content-center" style="margin: 0 auto">
->>>>>>> 55941422217851bb73a21c1c85a06196463a7ac1
-=======
-  <div class="titulo col-4 row justify-content-center" style="margin: 0 auto">
->>>>>>> 55941422217851bb73a21c1c85a06196463a7ac1
     <h2>Editar: <%= @request.title %></h2>
   </div>
   <div>
@@ -16,17 +8,9 @@
       <%= f.input :title, :disabled => true %>
       <%= f.input :city, :disabled => true %>
       <%= f.input :detail, :disabled => true %>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <%= f.input :image, :disabled => true %>
-=======
-      <%= f.input :photo, :disabled => true %>
->>>>>>> 55941422217851bb73a21c1c85a06196463a7ac1
-=======
-      <%= f.input :photo, :disabled => true %>
->>>>>>> 55941422217851bb73a21c1c85a06196463a7ac1
+      <%= f.input :photos, :disabled => true %>
       <%= f.input :price, placeholder: "Cotizacion"%>
-      <%= f.input :comment, placeholder: "Cotizacion"%>
+      <%= f.input :comment, placeholder: "Comentario"%>
       <%= f.submit "Guardar", class: "btn-default" %>
     <% end %>
   </div>

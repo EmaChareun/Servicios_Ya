@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2022_03_03_154840) do
     t.string "detail"
     t.string "image"
     t.string "status"
-    t.float "price"
+    t.string "price"
     t.bigint "user_id", null: false
     t.bigint "professional_id", null: false
     t.datetime "created_at", precision: 6, null: false
