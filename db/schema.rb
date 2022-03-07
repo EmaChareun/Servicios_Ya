@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_03_154840) do
+ActiveRecord::Schema.define(version: 2022_03_07_004502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2022_03_03_154840) do
     t.bigint "request_id"
     t.bigint "user_id"
     t.integer "rating"
+    t.string "photos"
     t.index ["request_id"], name: "index_reviews_on_request_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
@@ -94,6 +95,7 @@ ActiveRecord::Schema.define(version: 2022_03_03_154840) do
     t.text "job", default: [], array: true
     t.boolean "validation", default: false
     t.string "avatar"
+    t.string "photos_professional"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
