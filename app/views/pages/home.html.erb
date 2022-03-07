@@ -23,19 +23,27 @@
       <% 6.times do %>
       <% number_rand = rand(0...@users.size)%>
       <div class="card-profesional">
+         <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
+        <div class="info-profesional">
         <h2><%= @users[number_rand].first_name %></h2>
-        <p>Servicios: <% @users[number_rand].job.each do |job|%>
+        <p> <b> Servicios:</b> <% @users[number_rand].job.each do |job|%>
           <%= job %>
           <% end %></p>
-        <p>Ubicación: <%= @users[number_rand].city %></p>
-        <br>
+        <p><b>Ubicación:</b> <%= @users[number_rand].city %></p>
+         </div>
+         <div class="link">
         <%= link_to 'mas detalles',  user_path(@users[number_rand].id), class: 'btn btn-primary' %>
       </div>
+       </div>
       <% end %>
     </div>
     <br>
     <br>
      <%= link_to 'Ver todos profesionales', users_path , class: 'btn btn-primary' %>
   </div>
+<<<<<<< HEAD
+=======
+  <%= link_to 'Ver todos profesionales', users_path , class: 'btn-1 btn-primary' %>
+>>>>>>> 2c09b7c57bd55a045151760bf7c0db218d169d2d
 <br>
 </div>

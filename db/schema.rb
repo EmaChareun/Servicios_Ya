@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2022_03_03_154840) do
     t.string "city"
     t.string "phone_number"
     t.string "role"
-    t.text "job", default: []
+    t.text "job", default: [], array: true
     t.boolean "validation", default: false
     t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true

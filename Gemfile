@@ -35,7 +35,7 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'cloudinary', '~> 1.16.0'
-
+gem 'faker'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
@@ -46,7 +46,10 @@ group :development, :test do  gem 'pry-byebug'
 end
 
 group :development do
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2c09b7c57bd55a045151760bf7c0db218d169d2d
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.

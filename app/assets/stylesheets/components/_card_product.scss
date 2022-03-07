@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box ;
+}
 .card-product {
   overflow: hidden;
   height: 120px;
@@ -35,7 +38,7 @@
 .card-grid{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 5px;
+  grid-gap: 7px;
    .card-profesional{
       border-radius: 5px;
       overflow: hidden;
@@ -43,8 +46,37 @@
       width: 300px;
       background-color: white;
       box-shadow: 0 0 15px rgba(49, 49, 49, 0.452);
-      // display: flex;
-      // align-items: center;
-      // justify-content: center;
+      font-size: 15px;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      position: relative;
+      pad: 10px;
+      h2{
+        font-size: 25px;
+        color: $bordo;
+      }
+      img{
+        width: 129px;
+        height: 129px;
+        border-radius: 100%;
+        margin-left: 5px;
+      }
+      .info-profesional{
+        margin: 45px;
+      }
+      .link{
+        position: relative;
+        top: 90px;
+        right: 202px;
+
+      }
+      a.btn.btn-primary{
+       width: 167px;
+       background-color: #83182ad5;
+       height: 24px;
+       padding: 1px;
+       color: white;
+      }
    }
 }
