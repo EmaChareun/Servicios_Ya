@@ -9,14 +9,14 @@ class ReviewsController < ApplicationController
   def new
     # @request = Request.find(params[:request_id])
     @review = Review.new
-     authorize @review
+    authorize @review
   end
 
   def create
     @review = Review.new(review_params)
     @request = Request.find(params[:request_id])
     @review.user = current_user
-     authorize @review
+    authorize @review
     @review.request = @request
     if @review.save
       redirect_to request_path(@request)
