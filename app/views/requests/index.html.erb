@@ -1,49 +1,39 @@
-<div class="container">
 
+<div class="container">
   <%  if current_user.role == "profesional" %>
-    <br>
-    <h1>Tus trabajos</h1>
-    <br>
-    <% @my_requests.each do |request| %>
-      <div>
-        <p> <%= link_to request.title, request_path(request.id) %> </p>
-        <p> <%= "Ubicacion: #{request.city}" %> </p>
-        <p> <%= "Detalles: #{request.detail}" %> </p>
-        <% request.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-        <% end%>
-        <p> <%= @review.request_id %> </p>
-      </div>
-    <% end %>
-    <br>
-        <br>
-    <h1>Tus solicitudes</h1>
-      <% @requests.each do |request| %>
-    <div>
-      <p> <%= link_to request.title, request_path(request.id)  %> </p>
-      <p> <%= "Ubicacion: #{request.city}" %> </p>
-      <p> <%= "Detalles: #{request.detail}" %> </p>
-      <% request.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-      <% end%>
-      <p> <%= @review.request_id %> </p>
-    </div>
-    <br>
-    <% end %>
+
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tus trabajos</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Tus solicitudes</button>
+  </li>
+  <%# <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+  </li> %>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><%= render 'trabajos', my_requests: @my_requests %></div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><%= render 'solicitudes', requests: @requests %></div>
+  <%# <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div> %>
+</div>
   <%  else current_user.role == "cliente" %>
-    <br>
-    <h1>Tus solicitudes</h1>
-      <% @requests.each do |request| %>
-      <div class="div">
-        <p> <%= link_to request.title, request_path(request.id)  %> </p>
-        <p> <%= "Ubicacion: #{request.city}" %> </p>
-        <p> <%= "Detalles: #{request.detail}" %> </p>
-        <% request.photos.each do |photo| %>
-           <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-        <% end%>
-      </div>
-    <br>
-    <% end %>
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Mi perfil</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Tus solicitudes</button>
+  </li>
+  </ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"> para renderizar perfil</div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><%= render 'solicitudes', requests: @requests %></div>
+  <%# <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div> %>
+</div>
   <% end %>
-  <%= link_to 'volver a busquedas', users_path, class: 'btn btn-primary' %>
+
+        <%= link_to 'volver a busquedas', users_path, class: 'btn btn-primary' %>
+
 </div>
