@@ -13,4 +13,6 @@ class User < ApplicationRecord
   validates :city, presence: true
   validates :role, presence: true
   validates :job, presence: true
+  geocoded_by :city
+  after_validation :geocode, if: :will_save_change_to_city?
 end

@@ -40,9 +40,9 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <%# photos.each do |photo| %>
-          <%#= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-        <%# end %>
+        <% @user.photos_professional.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
