@@ -2,14 +2,15 @@ class ReviewsController < ApplicationController
   # before_action
 
   def show
+    @request = Request.find(params[:request_id])
     @review = Review.find(params[:id])
     authorize @review
   end
 
   def new
-    # @request = Request.find(params[:request_id])
+    @request = Request.find(params[:request_id])
     @review = Review.new
-     authorize @review
+    authorize @review
   end
 
   def create
@@ -26,6 +27,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:content, :rating)
+    params.require(:review).permit(:content, :rating, :photos)
   end
 end

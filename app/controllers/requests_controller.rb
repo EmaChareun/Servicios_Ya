@@ -1,9 +1,13 @@
 class RequestsController < ApplicationController
   before_action :set_user, only: %i[new]
 
+  def show
+  @request = Request.find(params[:id])
+  authorize @request
+  end
+
   def index
     @request = policy_scope(Request).where(user: current_user)
-
     # @review_search = Review.find(params[:request_id])
     # @review_all = Review.all
     @request_by = Request.all
@@ -55,7 +59,7 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:title, :city, :detail, :photos, :professional_id)
+    params.require(:request).permit(:title, :city, :detail, :photos, :professional_id, :price, :comment, :status )
   end
 
   def set_user
