@@ -49,7 +49,11 @@
                 autofocus: true,
                 prompt: "Foto de perfil",
                 input_html: { autocomplete: "avatar" }%>
-
+    <%= f.input :photos_professional, as: :file,
+                label: "Fotos de tus trabajos",
+                required: true,
+                autofocus: true,
+                prompt: "Fotos de profesional"%>
   </div>
 
   <div class="form-actions">
