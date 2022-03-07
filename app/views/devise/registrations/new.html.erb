@@ -37,14 +37,15 @@
                 collection: ["cliente", "profesional"],
                 prompt: "Tipo de usuario",
                 input_html: { autocomplete: "role" }%>
-    <%= f.input :job,
+    <%= f.input :job, as: :check_boxes,
                 required: true,
                 autofocus: true,
                 collection: ["A/A", "Albañil",	"Arquitecto",	"Autos",	"Belleza",	"Bienestar",	"Carpintero",	"Cerrajero", "Colocador", "Control de plagas", "Cuidadores",	"Decorador",	"Electricista",	"Gasista",	"Herrero",	"Jardinero",	"Limpieza",	"Mascotas",	"Mudanzas",	"Piletas", "Pintor",	"Plomero", "Reformas",	"Seguridad", "Tapicero",	"Técnico"],
+                multiple: true,
                 prompt: "Tipo de usuario",
                 input_html: { autocomplete: "job" }%>
     <%= f.input :photo, as: :file,
-                required: true,
+                # required: true,
                 autofocus: true,
                 prompt: "Foto de perfil",
                 input_html: { autocomplete: "avatar" }%>

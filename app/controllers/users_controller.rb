@@ -8,6 +8,12 @@ class UsersController < ApplicationController
     else
       @users = User.where(role: "profesional")
     end
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
+    end
   end
 
   def show
@@ -30,6 +36,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :phone_number, :city, :job, :role, :photos)
+    params.require(:user).permit(:first_name, :last_name, :phone_number, :city, :role, :photos, job: [])
   end
 end
