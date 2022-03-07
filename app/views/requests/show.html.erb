@@ -1,4 +1,3 @@
-
 <div class="container col-6">
 
 
@@ -13,7 +12,14 @@
   <li>Imagen: <%= @request.image %></li>
 
   </ul>
-
-  <%= link_to 'hacer una reseña', new_request_review_path(@request.id) , class: 'btn btn-primary' %>
-
+  <% %>
+  <% if @request.professional_id != current_user.id %>
+    <% if @request.reviews.empty? %>
+      <%= link_to 'hacer una reseña', new_request_review_path(@request.id) , class: 'btn btn-primary' %>
+    <% else %>
+     <h3>Tu reseña</h3>
+      <p> Comentario: <%= @request.reviews.first.content %> </p>
+      <p> Rating: <%= @request.reviews.first.rating %> </p>
+    <% end %>
+  <% end %>
 </div>

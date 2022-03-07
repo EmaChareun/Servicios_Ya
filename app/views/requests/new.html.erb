@@ -3,6 +3,5 @@
   <p> Habilidades:  <% @user.job.each do |job|%>
             <%= job %>
             <% end %>
-
   <%= render 'form', user: @user, request: @request %>
 </div>

@@ -2,8 +2,8 @@ class RequestsController < ApplicationController
   before_action :set_user, only: %i[new]
 
   def show
-  @request = Request.find(params[:id])
-  authorize @request
+    @request = Request.find(params[:id])
+    authorize @request
   end
 
   def index
