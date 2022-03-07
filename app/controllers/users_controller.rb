@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def index
     @users = policy_scope(User)
     if params[:query].present?
-      @users = User.where("array_to_string(job, '||') ILIKE ? AND role = 'profesional'", "%#{params[:query]}%")
+    @users = User.where("array_to_string(job, '||') ILIKE ? AND role = 'profesional'", "%#{params[:query]}%").or(User.where("city ILIKE ?", "%#{params[:query]}%"))
     else
       @users = User.where(role: "profesional")
     end

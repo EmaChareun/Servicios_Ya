@@ -1,5 +1,5 @@
 class Request < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
   belongs_to :professional, class_name: "User", foreign_key: "professional_id", optional: true
   has_many :reviews
   has_many_attached :photos
