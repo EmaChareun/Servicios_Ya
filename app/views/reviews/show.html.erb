@@ -1,0 +1,9 @@
+<div class="container col-6">
+
+  <h3>Reseña: <%= @review.content %></h3>
+  <p>Calificacion: <%= @review.rating %></p>
+  <% request.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end%>
+
+</div>

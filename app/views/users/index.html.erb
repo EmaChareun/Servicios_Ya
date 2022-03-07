@@ -2,9 +2,9 @@
   <br>
   <h1>Profesionales</h1>
   <% if @users.blank? %>
-  <p> No se encuentra el profesional </p>
-   <% end %>
-  <br>
+    <p> No se encuentra el profesional </p>
+  <% end %>
+    <br>
   <% @users.each do |user| %>
     <% if user_signed_in? == false %>
       <div class="card-product">
@@ -34,5 +34,12 @@
       <% else %>
       <% end %>
     <% end %>
-  <% end %>
-</div>@
+
+
+  <div style="width: 100%; height: 600px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
+
