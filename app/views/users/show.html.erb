@@ -49,9 +49,13 @@
     </button>
   </div>
 
-
   <br>
   <br>
-  <%= link_to 'Crear solicitud', new_user_request_path(@user.id), class: 'btn btn-primary' %>
+  <% if user_signed_in? == false %>
+    <%= link_to 'Crear solicitud', new_user_request_path(@user.id), class: 'btn btn-primary' %>
+  <% elsif @user.id != current_user.id %>
+      <%= link_to 'Crear solicitud', new_user_request_path(@user.id), class: 'btn btn-primary' %>
+  <% else %>
+  <% end %>
   <%= link_to 'Volver a búsquedas', users_path, class: 'btn btn-primary' %>
 </div>

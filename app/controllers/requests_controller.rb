@@ -1,8 +1,18 @@
 class RequestsController < ApplicationController
   before_action :set_user, only: %i[new]
 
+  def show
+  @request = Request.find(params[:id])
+  authorize @request
+  end
+
   def index
     @request = policy_scope(Request).where(user: current_user)
+    # @review_search = Review.find(params[:request_id])
+    # @review_all = Review.all
+    @request_by = Request.all
+    @review_by = Review.all
+    @review = Review.new
 
     if current_user.role == "profesional"
       @my_requests = Request.where(professional_id: current_user.id)
@@ -36,8 +46,10 @@ class RequestsController < ApplicationController
   def update
     @request = Request.find(params[:id])
     @request.update(request_params)
+    authorize @request
     redirect_to requests_path(@request)
   end
+
   def destroy
     @request = Request.find(params[:id])
     @request.destroy
@@ -47,7 +59,7 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:title, :city, :detail, :photos, :professional_id)
+    params.require(:request).permit(:title, :city, :detail, :photos, :professional_id, :price, :comment, :status )
   end
 
   def set_user

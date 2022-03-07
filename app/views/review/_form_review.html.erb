@@ -1,0 +1,8 @@
+<div>
+  <%= simple_form_for [request, @review] do |f| %>
+    <%= f.input :content, placeholder: "Escribe tu reseña aquí" %>
+    <%= f.input :rating, collection: 1..5, prompt: "Agrega un rating" %>
+    <%= f.input :photos, placeholder: "Agrega una foto" %>
+    <%= f.submit "Agregar reseña", class: 'btn btn-primary'%>
+  <% end %>
+</div>

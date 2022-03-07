@@ -6,18 +6,35 @@
    <% end %>
   <br>
   <% @users.each do |user| %>
+    <% if user_signed_in? == false %>
       <div class="card-product">
-        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
-        <div class="card-product-infos">
-          <h2><%= user.first_name %></h2>
-          <p>Servicios: <% user.job.each do |job|%>
-          <%= job %>
-          <% end %></p>
-          <p>Ubicación: <%= user.city %></p>
-          <%= link_to 'Detalles',  user_path(user), class: 'btn btn-primary btn-sm mt-2' %>
-        </div>
-      </div>
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
+            <div class="card-product-infos">
+              <h2><%= user.first_name %></h2>
+              <p>Servicios: <% user.job.each do |job|%>
+              <%= job %>
+              <% end %></p>
+              <p>Ubicación: <%= user.city %></p>
+              <%= link_to 'Detalles',  user_path(user), class: 'btn btn-primary btn-sm mt-2' %>
+            </div>
+          </div>
+    <% else %>
+      <% if user.id != current_user.id %>
+          <div class="card-product">
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
+            <div class="card-product-infos">
+              <h2><%= user.first_name %></h2>
+              <p>Servicios: <% user.job.each do |job|%>
+              <%= job %>
+              <% end %></p>
+              <p>Ubicación: <%= user.city %></p>
+              <%= link_to 'Detalles',  user_path(user), class: 'btn btn-primary btn-sm mt-2' %>
+            </div>
+          </div>
+      <% else %>
+      <% end %>
     <% end %>
+
 
   <div style="width: 100%; height: 600px;"
     data-controller="mapbox"
@@ -25,3 +42,4 @@
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
+

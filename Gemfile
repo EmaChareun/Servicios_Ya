@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.3'
 
+gem 'faker'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.6'
 # Use postgresql as the database for Active Record
@@ -35,6 +37,7 @@ gem 'simple_form'
 gem 'cloudinary', '~> 1.16.0'
 gem 'faker'
 gem "geocoder"
+
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

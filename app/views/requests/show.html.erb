@@ -1,0 +1,19 @@
+
+<div class="container col-6">
+
+
+  <h3>Titulo: <%= @request.title %></h3>
+  <p>Estado: <%= @request.status %></p>
+  <ul>
+  <li>Detalles: <%= @request.detail %></li>
+  <li>Ciudad: <%= @request.city %></li>
+  <li>Nombre del profesional: </li>
+  <li>Comentarios del profesional: <%= @request.comment %></li>
+  <li>Precio: <%= @request.price %></li>
+  <li>Imagen: <%= @request.image %></li>
+
+  </ul>
+
+  <%= link_to 'hacer una reseña', new_request_review_path(@request.id) , class: 'btn btn-primary' %>
+
+</div>
