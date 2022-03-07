@@ -11,8 +11,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    # Mostrar las reviews del profesional
     @user = User.find(params[:id])
+    @my_requests = Request.where(professional_id: @user)
     authorize @user
+    # raise
   end
 
   def edit

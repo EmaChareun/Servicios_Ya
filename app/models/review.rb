@@ -4,8 +4,4 @@ class Review < ApplicationRecord
   belongs_to :user
   validates :content, presence: true
   validates :rating, numericality: true, inclusion: { in: (1..5) }
-
-  def self.random_review(request)
-    Review.all.where(request_id: request.id)
-  end
 end

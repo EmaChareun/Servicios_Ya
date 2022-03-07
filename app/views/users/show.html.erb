@@ -21,17 +21,23 @@
     </div>
   </div>
   <br>
-
   <h3>Reseñas</h3>
   <div class="card border-light mb-3" style="max-width: 40rem;">
     <div class="card-body">
-      <h5 class="card-title">Light card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title">Reseñas del profesional</h5>
+        <p class="card-text"><% @my_requests.each do |request| %>
+          <% if request.reviews.first.nil? %>
+           <%= "No tiene reseñas" %>
+          <% else %>
+            <ul>
+              <li>Contenido: <%= request.reviews.first.content %> Rating: <%= request.reviews.first.rating %>
+            </ul>
+          <% end %>
+        <% end %></p>
+      </div>
     </div>
-  </div>
-
-  <h3>Trabajos Realizados</h3>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <h3>Trabajos Realizados</h3>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <%# photos.each do |photo| %>
