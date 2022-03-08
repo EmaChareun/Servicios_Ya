@@ -42,8 +42,8 @@
    .card-profesional{
       border-radius: 5px;
       overflow: hidden;
-      height: 200px;
-      width: 300px;
+      height: 34vh;
+      width: 30vw;
       background-color: white;
       box-shadow: 0 0 15px rgba(49, 49, 49, 0.452);
       font-size: 15px;
@@ -53,7 +53,7 @@
       position: relative;
       pad: 10px;
       h2{
-        font-size: 25px;
+        font-size: 20px;
         color: $bordo;
       }
       img{
@@ -67,12 +67,12 @@
       }
       .link{
         position: relative;
-        top: 90px;
+        top: 105px;
         right: 202px;
 
       }
       a.btn.btn-primary{
-       width: 167px;
+       width: 150px;
        background-color: #83182ad5;
        height: 24px;
        padding: 1px;
