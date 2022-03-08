@@ -1,6 +1,6 @@
 <% requests.each do |request| %>
       <div class="div">
-          <p> <%= link_to request.title, edit_request_path(request.id)  %> </p>
+          <p> <%= link_to request.title, request_path(request.id)  %> </p>
           <p> <%= "Ubicacion: #{request.city}" %> </p>
           <p> <%= "Detalles: #{request.detail}" %> </p>
           <% request.photos.each do |photo| %>

@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def index
     @users = policy_scope(User)
     if params[:query].present?
-    @users = User.where("array_to_string(job, '||') ILIKE ? AND role = 'profesional'", "%#{params[:query]}%").or(User.where("city ILIKE ?", "%#{params[:query]}%"))
+    @users = User.where("array_to_string(job, '||') ILIKE ? AND role = 'profesional'", "%#{params[:query]}%").or(User.where("city ILIKE ? AND role = 'profesional'", "%#{params[:query]}%"))
     else
       @users = User.where(role: "profesional")
     end
@@ -23,7 +23,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @my_requests = Request.where(professional_id: @user)
     authorize @user
-    # raise
   end
 
   def edit
