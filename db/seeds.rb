@@ -21,12 +21,12 @@ lista_nombres = ["Marcos", "Florencia", "Marines", "Juan", "Esteban", "Santiago"
 
 lista_apellidos = ["Sanchez", "Avila", "Viera", "Chareun", "Ponce de Leon", "Garcia", "Perez"]
 
-10.times do |i|
-  User.create!(email: Faker::Internet.email, password: "111111", password_confirmation: "111111", first_name: lista_nombres.sample, last_name: lista_apellidos.sample, city: lista_ciudades.sample, phone_number: Faker::PhoneNumber.cell_phone, role: "cliente", job: ["clientes"], avatar: Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg"))
+3.times do |i|
+  User.create!(email: "cliente#{i+1}@example.com", password: "111111", password_confirmation: "111111", first_name: lista_nombres.sample, last_name: lista_apellidos.sample, city: lista_ciudades.sample, phone_number: Faker::PhoneNumber.cell_phone, role: "cliente", job: ["clientes"], avatar: Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg"))
 end
 
-10.times do |i|
-  User.create!(email: Faker::Internet.email, password: "111111", password_confirmation: "111111", first_name: lista_nombres.sample, last_name: lista_apellidos.sample, city: lista_ciudades.sample, phone_number: Faker::PhoneNumber.cell_phone, role: "profesional", job: lista_oficio.sample(3), validation: random_boolean = [true, false].sample, avatar: Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg"))
+12.times do |i|
+  User.create!(email: "profesional#{i+1}@example.com", password: "111111", password_confirmation: "111111", first_name: lista_nombres.sample, last_name: lista_apellidos.sample, city: lista_ciudades.sample, phone_number: Faker::PhoneNumber.cell_phone, role: "profesional", job: lista_oficio.sample(3), validation: random_boolean = [true, false].sample, avatar: Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg"))
 end
 
 request1 = Request.create!(title: "Plomero", city: "Tigre", detail: "Necesito cambiar un grifo", user: User.first, professional: User.last)
