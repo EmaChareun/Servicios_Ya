@@ -1,19 +1,32 @@
 <div class="banner"
   style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/free-photo/empty-red-brick-wall_53876-31790.jpg?w=996);">
+<<<<<<< HEAD
   <h1>Servicios Ya!</h1>
   <p>La manera más simple de contratar un servicio</p>
+=======
+  <div class="titulo-banner">
+    <h1>Servicios YA</h1>
+  </div>
+    <p>Te ayudamos a resolver el problema de tu hogar</p>
+>>>>>>> 031fca5601f810383cdf149f8d3531892e6d8b32
     <div class="search">
-        <%= form_tag users_path, method: :get do %>
-        <i class="fas fa-search" style="position: absolute; z-index: 10; margin-left: 305px; margin-top:10px; color:white;" ></i>
-      <%= submit_tag "  Search", style:"position: absolute; margin-left: 299px;", class: "btn btn-default", id: "btn-search" %>
+        <%= form_tag users_path, method: :get, class: "form-search" do %>
+        <%# <i class="fas fa-search" style="position: absolute; z-index: 10; margin-left: 305px; margin-top:10px; color:white;" ></i> %>
+        <%#= submit_tag "  Search", style:"position: relative; margin-left: 299px;", class: "btn btn-default", id: "btn-search" %>
+
         <%= text_field_tag :query,
             params[:query],
 
+
       class: "form-control",
             placeholder: "Buscar por servicio o ubicación"%>
+             <%= button_tag(type: "submit", class: "btn btn-default", id: "btn-search") do %>
+            <i class="fas fa-search"></i> Search
+        <% end %>
         <% end%>
     </div>
   </div>
+
     <br>
     <br>
   <div class="container-fluid">
@@ -47,7 +60,7 @@
       </button>
     </div>
 
-  <h2>Servicios </h2>
+  <h2 class= "text-center">Profesionales destacados </h2>
    <div class="card-users">
       <% 3.times do %>
         <% number_rand = rand(0...@users.size)%>
@@ -64,6 +77,7 @@
               <p class="fa fa-star" aria-hidden="true"> </p>
               <p class="fa fa-star" aria-hidden="true"> </p>
               <p class="fa fa-star" aria-hidden="true"> </p>
+              <p class="fa fa-star" aria-hidden="true"> </p>
           </div>
           <ul class="social">
             <%# <li><a href="../users/show.html" class="fa fa-info-circle" aria-hidden="true"></a></li> %>
@@ -72,7 +86,12 @@
                   <i class="fa fa-info-circle"></i>
               <% end %>
             </li>
-            <li><a href="#" class="fa fa-envelope" aria-hidden="true"></a></li>
+            <li>
+              <%= link_to new_user_request_path(@users[number_rand].id) do %>
+                  <i class="fa fa-envelope"></i>
+              <% end %>
+              </li>
+
           </ul>
           <div class="link">
             <%= link_to "mas detalles",  user_path(@users[number_rand].id) %>

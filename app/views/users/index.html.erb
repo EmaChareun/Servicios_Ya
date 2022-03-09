@@ -21,21 +21,31 @@
               <div class="card-users">
                 <div class="our-team">
                   <div class="picture">
-                    <img class="img-fluid"
-                      src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+                    <%# <%= cl_image_tag user.photo.key %> %>
+                    <%# <img class="img-fluid"
+                      src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"> %>
                   </div>
                   <div class="team-content">
                     <h5 class="name"><%= user.first_name %></h5>
                     <h6 class="title"><%= user.job %></h6>
                     <h6 class="location"><%= user.city %></h6>
-                    <p class="fa fa-star" aria-hidden="true"> </p>
-                    <p class="fa fa-star" aria-hidden="true"> </p>
-                    <p class="fa fa-star" aria-hidden="true"> </p>
-                    <p class="fa fa-star" aria-hidden="true"> </p>
+                    <p class="fa fa-star" aria-hidden="true" style= "color:	#EABE3F"> </p>
+                    <p class="fa fa-star" aria-hidden="true" style= "color:	#EABE3F"> </p>
+                    <p class="fa fa-star" aria-hidden="true" style= "color:	#EABE3F"> </p>
+                    <p class="fa fa-star" aria-hidden="true" style= "color:	#EABE3F"> </p>
+                    <p class="fa fa-star" aria-hidden="true" style= "color:	#EABE3F"> </p>
                   </div>
                   <ul class="social">
-                    <li><a href="#" class="fa fa-info-circle" aria-hidden="true"></a></li>
-                    <li><a href="#" class="fa fa-envelope" aria-hidden="true"></a></li>
+                  <li>
+                    <%= link_to user_path(user.id) do %>
+                      <i class="fa fa-info-circle"></i>
+                      <% end %>
+                  </li>
+                   <li>
+                    <%= link_to new_user_request_path(user.id) do %>
+                      <i class="fa fa-envelope"></i>
+                      <% end %>
+                  </li>
                   </ul>
                 </div>
               </div>
