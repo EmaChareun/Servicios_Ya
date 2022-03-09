@@ -17,7 +17,7 @@
         <br>
         <% @users.each do |user| %>
           <% if user_signed_in? == false || user.id != current_user.id %>
-            <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <div data-aos="fade-right">
               <div class="card-users">
                 <div class="our-team">
                   <div class="picture">
@@ -45,7 +45,7 @@
       </div>
     </div>
     <div class="container map-container">
-      <div style="width: 100%; height: 100vh; margin-top: 20px;"
+      <div id="map" style="width: 100%; height: 100vh; margin-top: 20px;"
         data-controller="mapbox"
         data-mapbox-markers-value="<%= @markers.to_json %>"
         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
