@@ -1,15 +1,26 @@
-<div class="container">
-  <br>
-  <h1>Profesionales</h1>
+<div class="search-users">
+    <%= form_tag users_path, method: :get do %>
+      <%= text_field_tag :query,
+          params[:query], class: "form-control", placeholder: "Buscar por servicio o ubicación" %>
+      <%#= submit_tag "Search", class: "btn btn-primary" %>
+    <% end%>
+  </div>
 
-  <div class="container d-flex">
+<div class="container">
+  <div class="container">
+    <div class="container map-container">
+      <div style="width: 100%; height: 250px;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
     <div class="row">
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <% if @users.blank? %>
           <p> No se encuentra el profesional </p>
         <% end %>
         <br>
-
         <% @users.each do |user| %>
           <% if user_signed_in? == false %>
             <div class="card-users">
@@ -61,12 +72,42 @@
         <% end %>
       </div>
     </div>
-    <div class="container map-container">
-      <div style="width: 100%; height: 100vh; margin-top: 20px;"
-        data-controller="mapbox"
-        data-mapbox-markers-value="<%= @markers.to_json %>"
-        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+  </div>
+
+  <div class="container">
+    <div class="cellphone-container">
+        <div class="movie">
+          <div class="movie-img"></div>
+          <div class="text-movie-cont">
+            <div class="mr-grid">
+              <div class="col1">
+                <h1><%= "Juan Perez" %></h1>
+              </div>
+            </div>
+            <div class="mr-grid summary-row">
+              <div class="col2">
+                <p class="location"><i class="fas fa-map-marker-alt front-icons"></i>Quilmes</p>
+              </div>
+            </div>
+            <div class="mr-grid">
+              <div class="col1">
+                <p class="movie-description"> Carpintero con más de 20 años de experiencia. Construcción de marcos de ventanas, puertas, escaleras y pórticos con materias primas o elementos preconstruidos. </p>
+              </div>
+            </div>
+            <div class="mr-grid action-row">
+              <div class="col2">
+                <div class="watch-btn"><h3>Contactar</h3></div>
+              </div>
+              <div class="col6 action-btn">
+                <i class="fa fa-info-circle"></i>
+              </div>
+              <div class="col6 action-btn">
+                <i class="fa fa-envelope"></i>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
+
 </div>
