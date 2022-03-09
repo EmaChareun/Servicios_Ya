@@ -23,10 +23,10 @@
     <% 3.times do %>
       <% number_rand = rand(0...@users.size)%>
       <div class="our-team">
-       <div class="picture">
+        <div class="picture">
                   <img class="img-fluid"
                     src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-                </div>
+          </div>
          <div class="team-content">
           <h5 class="name"><%= @users[number_rand].first_name %></h5>
            <h6 class="title">  Servicios: </b> <% @users[number_rand].job.each do |job|%>
@@ -49,9 +49,7 @@
   <div class="link-ver">
     <%= link_to 'Ver todos profesionales', users_path , class: 'btn btn-default' %>
   </div>
-
 </div>
-
 <div class="footer-basic">
         <footer>
             <div class="social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>

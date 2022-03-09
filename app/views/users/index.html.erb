@@ -1,11 +1,11 @@
-  <div class="search-users">
+<div class="search-users">
     <%= form_tag users_path, method: :get do %>
     <i class="fas fa-search" style="position: absolute; z-index: 10; margin-left: 305px; margin-top:12px; color:white;"></i>
     <%= submit_tag "  Search", style:"position: absolute; margin-left: 299px;", class: "btn btn-default" %>
     <%= text_field_tag :query,
       params[:query], class: "form-control", placeholder: "Buscar por servicio o ubicación"%>
     <% end%>
-  </div>
+</div>
 
 <div class="container index-users">
   <div class="container d-flex">
@@ -50,6 +50,6 @@
         data-mapbox-markers-value="<%= @markers.to_json %>"
         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-    </div>
+ </div>
   </div>
 </div>

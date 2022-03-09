@@ -56,6 +56,15 @@ class RequestsController < ApplicationController
     authorize @request
     redirect_to requests_path(@request)
   end
+
+  # def change_status
+  #   if @request.price.empty?
+  #     @request.status == "Creada"
+  #   else
+  #     @request.status ==
+  #   end
+  # end
+
   private
 
   def request_params
