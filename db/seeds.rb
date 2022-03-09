@@ -15,7 +15,7 @@ puts "Creando seeds"
 
 lista_oficio = ["A/A", "Albañil",	"Arquitecto",	"Autos",	"Belleza",	"Bienestar",	"Carpintero",	"Cerrajero", "Colocador", "Control de plagas", "Cuidador",	"Decorador", "Electricista",	"Gasista",	"Herrero",	"Jardinero", "Limpieza",	"Mascotas", "Mudanzas", "Piletas", "Pintor",	"Plomero", "Reformas", "Seguridad", "Tapicero", "Técnico"]
 
-lista_ciudades = ["Buenos Aires", "Tigre", "San Fernando", "Don Torcuato", "El Talar", "Tortuguitas"]
+lista_ciudades = ["Buenos Aires", "Tigre", "Vicente Lopez", "Don Torcuato", "Quilmes", "Tortuguitas"]
 
 lista_nombres = ["Marcos", "Florencia", "Marines", "Juan", "Esteban", "Santiago"]
 

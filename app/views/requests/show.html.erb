@@ -1,5 +1,4 @@
 <div class="container col-6">
-
   <h3>Titulo: <%= @request.title %></h3>
   <p>Estado: <%= @request.status %></p>
   <ul>
@@ -21,6 +20,5 @@
       <p> Rating: <%= @request.reviews.first.rating %> </p>
     <% end %>
   <% end %>
-
   <%= link_to 'Editar solicitud', edit_request_path(@request.id) , class: 'btn btn-primary' %>
 </div>

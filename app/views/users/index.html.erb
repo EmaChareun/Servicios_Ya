@@ -1,40 +1,55 @@
-<div class="container">
-  <br>
-  <h1>Profesionales</h1>
-  <% if @users.blank? %>
-    <p> No se encuentra el profesional </p>
-  <% end %>
-    <br>
-  <% @users.each do |user| %>
-    <% if user_signed_in? == false %>
-      <div class="card-product">
-        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
-          <div class="card-product-infos">
-              <h2><%= user.first_name %></h2>
-              <p>Servicio: <%= user.job %>
-              <p>Ubicación: <%= user.city %></p>
-              <%= link_to 'Detalles',  user_path(user), class: 'btn btn-primary btn-sm mt-2' %>
-            </div>
-      </div>
-    <% else %>
-      <% if user.id != current_user.id %>
-          <div class="card-product">
-            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
-            <div class="card-product-infos">
-              <h2><%= user.first_name %></h2>
-              <p>Servicio: <%= user.job %>
-              <p>Ubicación: <%= user.city %></p>
-              <%= link_to 'Detalles',  user_path(user), class: 'btn btn-primary btn-sm mt-2' %>
-            </div>
-          </div>
-      <% else %>
-      <% end %>
-    <% end %>
-  <% end %>
+<div class="search-users">
+    <%= form_tag users_path, method: :get do %>
+    <i class="fas fa-search" style="position: absolute; z-index: 10; margin-left: 305px; margin-top:12px; color:white;"></i>
+    <%= submit_tag "  Search", style:"position: absolute; margin-left: 299px;", class: "btn btn-default" %>
+    <%= text_field_tag :query,
+      params[:query], class: "form-control", placeholder: "Buscar por servicio o ubicación"%>
+    <% end%>
+</div>
 
-  <div style="width: 100%; height: 600px;"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="container index-users">
+  <div class="container d-flex">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <% if @users.blank? %>
+        <p> No se encuentra el profesional </p>
+        <% end %>
+        <br>
+        <% @users.each do |user| %>
+          <% if user_signed_in? == false || user.id != current_user.id %>
+            <div data-aos="fade-right">
+              <div class="card-users">
+                <div class="our-team">
+                  <div class="picture">
+                    <img class="img-fluid"
+                      src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+                  </div>
+                  <div class="team-content">
+                    <h5 class="name"><%= user.first_name %></h5>
+                    <h6 class="title"><%= user.job %></h6>
+                    <h6 class="location"><%= user.city %></h6>
+                    <p class="fa fa-star" aria-hidden="true"> </p>
+                    <p class="fa fa-star" aria-hidden="true"> </p>
+                    <p class="fa fa-star" aria-hidden="true"> </p>
+                    <p class="fa fa-star" aria-hidden="true"> </p>
+                  </div>
+                  <ul class="social">
+                    <li><a href="#" class="fa fa-info-circle" aria-hidden="true"></a></li>
+                    <li><a href="#" class="fa fa-envelope" aria-hidden="true"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="container map-container">
+      <div id="map" style="width: 100%; height: 100vh; margin-top: 20px;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+ </div>
   </div>
 </div>
