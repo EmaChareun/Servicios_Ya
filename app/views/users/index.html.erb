@@ -1,8 +1,9 @@
-<div class="search-users">
+  <div class="search-users">
     <%= form_tag users_path, method: :get do %>
-      <%= text_field_tag :query,
-          params[:query], class: "form-control", placeholder: "Buscar por servicio o ubicación" %>
-      <%#= submit_tag "Search", class: "btn btn-primary" %>
+    <i class="fas fa-search" style="position: absolute; z-index: 10; margin-left: 305px; margin-top:12px; color:white;"></i>
+    <%= submit_tag "  Search", style:"position: absolute; margin-left: 299px;", class: "btn btn-default" %>
+    <%= text_field_tag :query,
+      params[:query], class: "form-control", placeholder: "Buscar por servicio o ubicación"%>
     <% end%>
   </div>
 
@@ -73,41 +74,4 @@
       </div>
     </div>
   </div>
-
-  <div class="container">
-    <div class="cellphone-container">
-        <div class="movie">
-          <div class="movie-img"></div>
-          <div class="text-movie-cont">
-            <div class="mr-grid">
-              <div class="col1">
-                <h1><%= "Juan Perez" %></h1>
-              </div>
-            </div>
-            <div class="mr-grid summary-row">
-              <div class="col2">
-                <p class="location"><i class="fas fa-map-marker-alt front-icons"></i>Quilmes</p>
-              </div>
-            </div>
-            <div class="mr-grid">
-              <div class="col1">
-                <p class="movie-description"> Carpintero con más de 20 años de experiencia. Construcción de marcos de ventanas, puertas, escaleras y pórticos con materias primas o elementos preconstruidos. </p>
-              </div>
-            </div>
-            <div class="mr-grid action-row">
-              <div class="col2">
-                <div class="watch-btn"><h3>Contactar</h3></div>
-              </div>
-              <div class="col6 action-btn">
-                <i class="fa fa-info-circle"></i>
-              </div>
-              <div class="col6 action-btn">
-                <i class="fa fa-envelope"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>
-
 </div>
