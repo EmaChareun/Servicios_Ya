@@ -34,32 +34,33 @@
         <% end %></p>
       </div>
     </div>
+
     <h3>Trabajos Realizados</h3>
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <% @user.photos_professional.each do |photo| %>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+         <% @user.photos.each do |photo| %>
           <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+      </button>
+    </div>
 
   <br>
   <br>
   <% if user_signed_in? == false %>
-    <%= link_to 'Crear solicitud', new_user_request_path(@user.id), class: 'btn btn-primary' %>
+    <%= link_to 'Crear solicitud', new_user_request_path(@user.id), class: 'btn btn-default' %>
   <% elsif @user.id != current_user.id %>
-      <%= link_to 'Crear solicitud', new_user_request_path(@user.id), class: 'btn btn-primary' %>
+      <%= link_to 'Crear solicitud', new_user_request_path(@user.id), class: 'btn btn-default' %>
   <% else %>
   <% end %>
-  <%= link_to 'Volver a búsquedas', users_path, class: 'btn btn-primary' %>
+  <%= link_to 'Volver a búsquedas', users_path, class: 'btn btn-default' %>
 </div>

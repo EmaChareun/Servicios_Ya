@@ -21,8 +21,9 @@
               <div class="card-users">
                 <div class="our-team">
                   <div class="picture">
-                    <img class="img-fluid"
-                      src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+                    <%# <%= cl_image_tag user.photo.key %> %>
+                    <%# <img class="img-fluid"
+                      src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"> %>
                   </div>
                   <div class="team-content">
                     <h5 class="name"><%= user.first_name %></h5>

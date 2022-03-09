@@ -6,6 +6,7 @@
     <%= f.input :city, placeholder: "Dirección" %>
     <%= f.input :phone_number, placeholder: "Número de teléfono" %>
     <%= f.input :job, placeholder: "Especialidad" %>
+    <%= f.input :photo, as: :file %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit "Guardar", class: 'btn btn-default' %>
   <% end %>
