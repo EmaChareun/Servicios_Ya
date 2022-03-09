@@ -1,13 +1,48 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: $bordo;
-  color: $white;
+  a {
+    position: relative;
+    display: block;
+    padding: 4px 0;
+    font-family: Lato, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #f1f0f1;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.5s;
+    }
+
+    &:hover {
+      color: #ff0000;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
   .navbar-collapse {
     flex-grow: 0;
   }
     .navbar-brand img {
       width: 40px;
     }
+    .nav-item dropdown {
+      background-color: black;
+    }
 
-
+}
+.navbar-light .navbar-nav .nav-link {
+  color: white;
 }
