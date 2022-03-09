@@ -10,7 +10,7 @@
         <%= f.input :city, :disabled => true %>
         <%= f.input :detail, :disabled => true %>
         <%= f.input :photos, :disabled => true %>
-        <%= f.input :price, placeholder: "Cotizacion" %>
+        <%= f.input :price, placeholder: "Cotización" %>
         <%= f.input :comment, placeholder: "Comentario" %>
         <%= f.submit "Guardar", class: "btn-default" %>
       <% end %>
@@ -32,11 +32,6 @@
           <%= link_to 'Cancelar solicitud', request_path(@request), id:"cancel-show", class: 'btn btn-primary' , method: :delete, data: {confirm: "Estas seguro de borrar?"} %>
         <% end %>
       </div>
-<<<<<<< HEAD
      <%end%>
   <%= link_to 'Volver a busquedas', users_path, class: 'btn btn-primary' %>
-=======
-    <%end%>
-  <%= link_to 'volver a busquedas', users_path, class: 'btn btn-primary' %>
->>>>>>> master
 </div>
