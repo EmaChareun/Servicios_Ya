@@ -1,7 +1,6 @@
 <div class="container">
   <br>
   <h1>Profesionales</h1>
-
   <% if @users.blank? %>
     <p> No se encuentra el profesional </p>
   <% end %>
@@ -35,9 +34,12 @@
       <% else %>
       <% end %>
     <% end %>
-<% end %>
+  <% end %>
 
-
+  <div style="width: 100%; height: 600px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   <div class="container d-flex">
     <div class="row">
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">

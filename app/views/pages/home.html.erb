@@ -19,17 +19,24 @@
   <br>
   <br>
 <div class="container-fluid">
-  <div class="card-grid">
+   <div class="card-users">
     <% 3.times do %>
       <% number_rand = rand(0...@users.size)%>
-      <div class="card-profesional">
-        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
-        <div class="info-profesional">
-          <h2><%= @users[number_rand].first_name %></h2>
-          <p> <b> Servicios: </b> <% @users[number_rand].job.each do |job|%>
+      <div class="our-team">
+       <div class="picture">
+                  <img class="img-fluid"
+                    src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+                </div>
+         <div class="team-content">
+          <h5 class="name"><%= @users[number_rand].first_name %></h5>
+           <h6 class="title">  Servicios: </b> <% @users[number_rand].job.each do |job|%>
             <%= job %>
-            <% end %></p>
-          <p><b>Ubicación:</b> <%= @users[number_rand].city %></p>
+            <% end %></h6>
+          <h6 class="location">Ubicación:</b> <%= @users[number_rand].city %></h6>
+            <p class="fa fa-star" aria-hidden="true"> </p>
+                  <p class="fa fa-star" aria-hidden="true"> </p>
+                  <p class="fa fa-star" aria-hidden="true"> </p>
+                  <p class="fa fa-star" aria-hidden="true"> </p>
         </div>
         <div class="link">
           <%= link_to "mas detalles",  user_path(@users[number_rand].id) %>
