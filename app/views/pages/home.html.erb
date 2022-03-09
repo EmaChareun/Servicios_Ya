@@ -26,9 +26,7 @@
          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
         <div class="info-profesional">
         <h2><%= @users[number_rand].first_name %></h2>
-        <p> <b> Servicios:</b> <% @users[number_rand].job.each do |job|%>
-          <%= job %>
-          <% end %></p>
+        <p> <b> Servicios:</b> <%= @users[number_rand].job %>
         <p><b>Ubicación:</b> <%= @users[number_rand].city %></p>
          </div>
          <div class="link">

@@ -4,6 +4,7 @@ class Request < ApplicationRecord
   # when request is destroyed, destroy will be called on its associated reviews.
   has_many :reviews, dependent: :destroy
   has_many_attached :photos
+  enum status: [:Creada, :Cotizada, :Aceptada, :Pagada], _default: "Creada"
   validates :title, presence: true
   validates :detail, presence: true
   validates :city, presence: true
