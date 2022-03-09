@@ -11,8 +11,8 @@
         <%= f.input :city, :disabled => true %>
         <%= f.input :detail, :disabled => true %>
         <%= f.input :photos, :disabled => true %>
-        <%= f.input :price, placeholder: "Cotizacion"%>
-        <%= f.input :comment, placeholder: "Comentario"%>
+        <%= f.input :price, label: "Cotización"%>
+        <%= f.input :comment, label: "Comentario"%>
         <%= f.submit "Guardar", class: "btn-default" %>
       <% end %>
     </div>
@@ -23,10 +23,10 @@
       </div>
       <div>
         <%= simple_form_for [@user, @request] do |f| %>
-          <%= f.input :title, placeholder: "Servicio Solicitado" %>
-          <%= f.input :city, placeholder: "Ciudad" %>
-          <%= f.input :detail, placeholder: "Detalles del problema" %>
-          <%= f.input :photos, placeholder: "Fotos" %>
+          <%= f.input :title, label: "Servicio" %>
+          <%= f.input :city, label: "Dirección" %>
+          <%= f.input :detail, label: "Descripción" %>
+          <%= f.input :photos, label: "Fotos" %>
           <%= f.input :price, :disabled => true %>
           <%= f.input :comment, :disabled => true %>
           <%= f.submit "Guardar", class: "btn-default" %>
@@ -34,5 +34,5 @@
         <% end %>
       </div>
      <%end%>
-  <%= link_to 'volver a busquedas', users_path, class: 'btn btn-primary' %>
+  <%= link_to 'Volver a busquedas', users_path, class: 'btn btn-primary' %>
 </div>
