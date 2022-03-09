@@ -10,7 +10,7 @@
         <%= f.input :city, :disabled => true %>
         <%= f.input :detail, :disabled => true %>
         <%= f.input :photos, :disabled => true %>
-        <%= f.input :price, placeholder: "Cotizacion" %>
+        <%= f.input :price, placeholder: "Cotización" %>
         <%= f.input :comment, placeholder: "Comentario" %>
         <%= f.submit "Guardar", class: "btn-default" %>
       <% end %>
@@ -22,16 +22,16 @@
       </div>
       <div>
         <%= simple_form_for [@user, @request] do |f| %>
-          <%= f.input :title, placeholder: "Servicio Solicitado" %>
-          <%= f.input :city, placeholder: "Ciudad" %>
-          <%= f.input :detail, placeholder: "Detalles del problema" %>
-          <%= f.input :photos, placeholder: "Fotos" %>
+          <%= f.input :title, label: "Servicio" %>
+          <%= f.input :city, label: "Dirección" %>
+          <%= f.input :detail, label: "Descripción" %>
+          <%= f.input :photos, label: "Fotos" %>
           <%= f.input :price, :disabled => true %>
           <%= f.input :comment, placeholder: "Comentario", :disabled => true %>
           <%= f.submit "Guardar", class: "btn-default" %>
           <%= link_to 'Cancelar solicitud', request_path(@request), id:"cancel-show", class: 'btn btn-primary' , method: :delete, data: {confirm: "Estas seguro de borrar?"} %>
         <% end %>
       </div>
-    <%end%>
-  <%= link_to 'volver a busquedas', users_path, class: 'btn btn-primary' %>
+     <%end%>
+  <%= link_to 'Volver a busquedas', users_path, class: 'btn btn-primary' %>
 </div>
