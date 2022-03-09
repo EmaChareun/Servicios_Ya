@@ -1,67 +1,103 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/free-photo/empty-red-brick-wall_53876-31790.jpg?w=996);">
   <h1>Servicios YA</h1>
-
   <p>Te ayudamos a resolver el problema de tu hogar</p>
 
-  <div class="search">
-      <%= form_tag users_path, method: :get do %>
-      <i class="fas fa-search" style="position: absolute; z-index: 10; margin-left: 305px; margin-top:10px; color:white;" ></i>
-     <%= submit_tag "  Search", style:"position: absolute; margin-left: 299px;", class: "btn btn-default" %>
-      <%= text_field_tag :query,
-          params[:query],
+    <div class="search">
+        <%= form_tag users_path, method: :get do %>
+        <i class="fas fa-search" style="position: absolute; z-index: 10; margin-left: 305px; margin-top:10px; color:white;" ></i>
+      <%= submit_tag "  Search", style:"position: absolute; margin-left: 299px;", class: "btn btn-default", id: "btn-search" %>
+        <%= text_field_tag :query,
+            params[:query],
 
-    class: "form-control",
-          placeholder: "Buscar por servicio o ubicación"%>
-      <% end%>
+      class: "form-control",
+            placeholder: "Buscar por servicio o ubicación"%>
+        <% end%>
+    </div>
   </div>
-</div>
-  <br>
-  <br>
-<div class="container-fluid">
-   <div class="card-users">
-    <% 3.times do %>
-      <% number_rand = rand(0...@users.size)%>
-      <div class="our-team">
-       <div class="picture">
-                  <img class="img-fluid"
-                    src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-                </div>
-         <div class="team-content">
-          <h5 class="name"><%= @users[number_rand].first_name %></h5>
-           <h6 class="title">  Servicios: </b> <% @users[number_rand].job.each do |job|%>
-            <%= job %>
-            <% end %></h6>
-          <h6 class="location">Ubicación:</b> <%= @users[number_rand].city %></h6>
-            <p class="fa fa-star" aria-hidden="true"> </p>
-                  <p class="fa fa-star" aria-hidden="true"> </p>
-                  <p class="fa fa-star" aria-hidden="true"> </p>
-                  <p class="fa fa-star" aria-hidden="true"> </p>
+    <br>
+    <br>
+  <div class="container-fluid">
+    <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+        <h2 class= "text-center"> Buscar </h2>
+          <p class= "text-center">Encontrá el e estás buscando puedes filtrar por servicio o ubicación. <br> Envía una solicitud para recibir un presupuesto a medida. </p>
         </div>
-        <div class="link">
-          <%= link_to "mas detalles",  user_path(@users[number_rand].id) %>
+        <div class="carousel-item">
+        <h2 class= "text-center"> Agendalo </h2>
+          <p class= "text-center"> Coordina con el profesional el horario y dia que quieres que vaya a solucionar tu problema. </p>
+        </div>
+        <div class="carousel-item">
+        <h2 class= "text-center"> ¡listo! </h2>
+          <p class= "text-center"> Realizá el pago online de manera segura. El profesional no recibe tu dinero hasta que no se califique el servicio. </p>
         </div>
       </div>
-    <% end %>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+  <h2>Servicios </h2>
+   <div class="card-users">
+      <% 3.times do %>
+        <% number_rand = rand(0...@users.size)%>
+        <div class="our-team">
+          <div class="picture">
+                    <img class="img-fluid"
+                      src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+            </div>
+          <div class="team-content">
+              <h5 class="name"><%= @users[number_rand].first_name %></h5>
+              <h6 class="title"> Servicios: </b> <% @users[number_rand].job%></h6>
+              <h6 class="location">Ubicación:</b> <%= @users[number_rand].city %></h6>
+              <p class="fa fa-star" aria-hidden="true"> </p>
+              <p class="fa fa-star" aria-hidden="true"> </p>
+              <p class="fa fa-star" aria-hidden="true"> </p>
+              <p class="fa fa-star" aria-hidden="true"> </p>
+          </div>
+          <ul class="social">
+            <%# <li><a href="../users/show.html" class="fa fa-info-circle" aria-hidden="true"></a></li> %>
+           <li>
+              <%= link_to user_path(@users[number_rand].id) do %>
+                  <i class="fa fa-info-circle"></i>
+              <% end %>
+            </li>
+            <li><a href="#" class="fa fa-envelope" aria-hidden="true"></a></li>
+          </ul>
+          <div class="link">
+            <%= link_to "mas detalles",  user_path(@users[number_rand].id) %>
+          </div>
+        </div>
+      <% end %>
   </div>
   <br>
   <br>
   <div class="link-ver">
     <%= link_to 'Ver todos profesionales', users_path , class: 'btn btn-default' %>
   </div>
-
 </div>
 
 <div class="footer-basic">
-        <footer>
-            <div class="social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">Home</a></li>
-                <li class="list-inline-item"><a href="#">Servicios</a></li>
-                <li class="list-inline-item"><a href="#">About</a></li>
-                <li class="list-inline-item"><a href="#">Terms</a></li>
-                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-            </ul>
-            <p class="copyright">Servicios Ya © 2022</p>
-        </footer>
-    </div>
+  <footer>
+    <div class="social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Home</a></li>
+      <li class="list-inline-item"><a href="#">Servicios</a></li>
+      <li class="list-inline-item"><a href="#">About</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+    </ul>
+    <p class="copyright">Servicios Ya © 2022</p>
+  </footer>
+</div>
