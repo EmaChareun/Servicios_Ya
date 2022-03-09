@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ServiciosYa</title>
+    <title>Servicios Ya! La manera más simple de contratar un servicio.</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script src="https://kit.fontawesome.com/82cb13e596.js" crossorigin="anonymous"></script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <script src="https://kit.fontawesome.com/82cb13e596.js" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   </head>
 
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-
     <%= yield %>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

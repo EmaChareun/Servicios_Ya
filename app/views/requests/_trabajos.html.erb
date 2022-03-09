@@ -4,11 +4,12 @@
     <% my_requests.each do |request| %>
       <div>
         <p> <%= link_to request.title, request_path(request.id) %> </p>
-        <p> <%= "Ubicacion: #{request.city}" %> </p>
+        <p> <%= "Dirección: #{request.city}" %> </p>
         <p> <%= "Detalles: #{request.detail}" %> </p>
+        <p> <%= "Precio $ #{request.price}" %> </p>
          <% request.photos.each do |photo| %>
             <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
           <% end%>
       </div>
     <% end %>
-    </div>
+</div>

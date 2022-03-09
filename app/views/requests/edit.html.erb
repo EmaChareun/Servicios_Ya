@@ -1,38 +1,37 @@
-<div class="container col-6">
-
-  <%  if current_user.id == @request.professional_id %>
-      <br>
-    <div class="titulo col-4 row justify-content-center" style="margin: 0 auto">
-      <h2>Editar: <%= @request.title %></h2>
-    </div>
+<div class="container col-6 mt-5">
+  <% if current_user.id == @request.professional_id %>
+    <br>
+      <div class="titulo row justify-content-center">
+        <h3 class="text-center">Editar Solicitud</h3>
+      </div>
     <div>
       <%= simple_form_for [@user, @request] do |f| %>
         <%= f.input :title, :disabled => true %>
         <%= f.input :city, :disabled => true %>
         <%= f.input :detail, :disabled => true %>
         <%= f.input :photos, :disabled => true %>
-        <%= f.input :price, placeholder: "Cotizacion"%>
-        <%= f.input :comment, placeholder: "Comentario"%>
+        <%= f.input :price, placeholder: "Cotización" %>
+        <%= f.input :comment, placeholder: "Comentario" %>
         <%= f.submit "Guardar", class: "btn-default" %>
       <% end %>
     </div>
-  <% else current_user.role == "cliente" %>
+  <% else %>
         <br>
-      <div class="titulo col-4 row justify-content-center" style="margin: 0 auto">
-        <h2>Editar: <%= @request.title %></h2>
+      <div class="titulo row justify-content-center">
+        <h3 class="text-center">Editar Solicitud</h3>
       </div>
       <div>
         <%= simple_form_for [@user, @request] do |f| %>
-          <%= f.input :title, placeholder: "Servicio Solicitado" %>
-          <%= f.input :city, placeholder: "Ciudad" %>
-          <%= f.input :detail, placeholder: "Detalles del problema" %>
-          <%= f.input :photos, placeholder: "Fotos" %>
+          <%= f.input :title, label: "Servicio" %>
+          <%= f.input :city, label: "Dirección" %>
+          <%= f.input :detail, label: "Descripción" %>
+          <%= f.input :photos, label: "Fotos" %>
           <%= f.input :price, :disabled => true %>
-          <%= f.input :comment, :disabled => true %>
-          <%= f.submit "Guardar", class: "btn-default" %>
-          <%= link_to 'Cancelar solicitud', request_path(@request), id:"cancel-show", class: 'btn btn-primary' , method: :delete, data: {confirm: "Estas seguro de borrar?"} %>
+          <%= f.input :comment, placeholder: "Comentario", :disabled => true %>
+          <%= f.submit "Guardar", class: "btn btn-default" %>
+          <%= link_to 'Cancelar solicitud', request_path(@request), id:"cancel-show", class: 'btn btn-default' , method: :delete, data: {confirm: "Estás seguro de borrar?"} %>
         <% end %>
       </div>
      <%end%>
-  <%= link_to 'volver a busquedas', users_path, class: 'btn btn-primary' %>
+  <%= link_to 'Volver a búsquedas', users_path, class: 'btn btn-default mt-2' %>
 </div>

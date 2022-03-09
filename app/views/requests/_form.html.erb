@@ -1,10 +1,10 @@
 <div>
   <%= simple_form_for [@user, @request] do |f| %>
-    <%= f.input :title, placeholder: "Servicio Solicitado" %>
-    <%= f.input :city, placeholder: "Ciudad" %>
-    <%= f.input :detail, placeholder: "Detalles del problema" %>
-    <%= f.input :photos, placeholder: "Fotos" %>
+    <%= f.input :title, label: "Título" %>
+    <%= f.input :city, label: "Dirección" %>
+    <%= f.input :detail, label: "Descripción" %>
+    <%= f.input :photos, label: "Fotos" %>
     <%= f.input :professional_id, as: :hidden, input_html: { value: "#{@user.id}"} %>
-    <%= f.submit "Guardar", class: "btn-default" %>
+    <%= f.submit "Guardar", class: "btn btn-default" %>
   <% end %>
 </div>

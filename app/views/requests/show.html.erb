@@ -1,26 +1,22 @@
-<div class="container col-6">
-
-
+<div class="container col-6 mt-5">
   <h3>Titulo: <%= @request.title %></h3>
   <p>Estado: <%= @request.status %></p>
   <ul>
-  <li>Detalles: <%= @request.detail %></li>
-  <li>Ciudad: <%= @request.city %></li>
-  <li>Nombre del profesional: </li>
-  <li>Comentarios del profesional: <%= @request.comment %></li>
-  <li>Precio: <%= @request.price %></li>
-  <li>Imagen: <%= @request.image %></li>
-
+    <li>Detalles: <%= @request.detail %></li>
+    <li>Dirección: <%= @request.city %></li>
+    <li>Comentarios del profesional: <%= @request.comment %></li>
+    <li>Precio: <%= @request.price %></li>
+    <li>Imagen: <%= @request.image %></li>
   </ul>
-  <% %>
+
   <% if @request.professional_id != current_user.id %>
     <% if @request.reviews.empty? %>
-      <%= link_to 'Hacer una reseña', new_request_review_path(@request.id) , class: 'btn btn-primary' %>
-      <%= link_to 'Editar solicitud', edit_request_path(@request.id) , class: 'btn btn-primary' %>
+      <%= link_to 'Hacer una reseña', new_request_review_path(@request.id) , class: 'btn btn-default' %>
     <% else %>
      <h3>Tu reseña</h3>
       <p> Comentario: <%= @request.reviews.first.content %> </p>
       <p> Rating: <%= @request.reviews.first.rating %> </p>
     <% end %>
   <% end %>
+  <%= link_to 'Editar solicitud', edit_request_path(@request.id) , class: 'btn btn-default' %>
 </div>
