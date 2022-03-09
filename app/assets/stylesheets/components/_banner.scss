@@ -1,8 +1,13 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 100px 0;
+  padding: 150px 0;
   h1,p{
     color: white;
+  }
+  .titulo-banner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
 }
