@@ -10,11 +10,9 @@
         <div class="card-body">
           <h3 class="card-title"><%= @user.first_name %></h3>
           <p class="card-text">
-            <li> Servicios: <% @user.job.each do |job|%>
-              <%= job %>
-              <% end %> </li>
-            <li> <%= @user.city %> </li>
-            <li> <%= @user.phone_number %> </li>
+            <li> Servicios: <%= @user.job %>
+            <li> Ciudad: <%= @user.city %> </li>
+            <li> Telefono: <%= @user.phone_number %> </li>
           </p>
         </div>
       </div>

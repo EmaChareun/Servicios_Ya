@@ -1,6 +1,4 @@
 <div class="container col-6">
-
-
   <h3>Titulo: <%= @request.title %></h3>
   <p>Estado: <%= @request.status %></p>
   <ul>
@@ -16,11 +14,11 @@
   <% if @request.professional_id != current_user.id %>
     <% if @request.reviews.empty? %>
       <%= link_to 'Hacer una reseña', new_request_review_path(@request.id) , class: 'btn btn-primary' %>
-      <%= link_to 'Editar solicitud', edit_request_path(@request.id) , class: 'btn btn-primary' %>
     <% else %>
      <h3>Tu reseña</h3>
       <p> Comentario: <%= @request.reviews.first.content %> </p>
       <p> Rating: <%= @request.reviews.first.rating %> </p>
     <% end %>
   <% end %>
+  <%= link_to 'Editar solicitud', edit_request_path(@request.id) , class: 'btn btn-primary' %>
 </div>
