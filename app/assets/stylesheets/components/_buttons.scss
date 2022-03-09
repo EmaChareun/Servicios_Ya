@@ -3,9 +3,20 @@ btn-p{
   transition: 0.5s;
 }
 .btn-default{
-  background-color: rgb(112, 99, 99);
-  border: solid 1px rgb(112, 99, 99);
-  color: white;
+  background-color: transparent;
+  border: solid 1px rgb(68, 18, 18);
+  color: $bordo;
+   &:hover{
+    background-color: $bordo;
+    color: white;
+    transform: scale(1.1);
+    transition: transform 0.3s;
+  }
+ }
+ #btn-search{
+  background-color: #555;
+  border: solid 1px #555555;
+  color: #f8f9fa;
    &:hover{
     background-color: $bordo;
     color: white;
