@@ -6,14 +6,14 @@
   h1{
     color: white;
     position: absolute;
-    left: 24.3%;
+    left: 28.3%;
     top:85px;
   }
 
   p{
     color: white;
     position: absolute;
-    left: 24.3%;
+    left: 28.3%;
     top: 125px;
   }
 }
@@ -22,11 +22,27 @@
   // justify-content: center;
   // align-items: center;
   // }
-  @media(max-width: 768px) {
-    .banner .p {
-      height: 49px;
-      position: absolute;
-      top: 116px;
-      };
+  // @media(max-width: 1366px) {
+  //   .banner p {
+  //     height: 49px;
+  //     position: absolute;
+  //     left: 28.3%;
+  //     top: 125px;
+  //     };
+  //   }
+  //   @media(max-width: 1200px) {
+  //     .banner h1 {
+  //       height: 49px;
+  //       position: absolute;
+  //       left: 28.3%;
+  //       top: 125px;
+  //       };
+  // }
+  // @media(max-width: 768px) {
+  //   .banner p {
+  //     height: 49px;
+  //     position: absolute;
+  //     top: 116px;
+  //     };
 
-    }
+  //   }
