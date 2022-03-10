@@ -22,11 +22,11 @@ lista_nombres = ["Marcos", "Florencia", "Marines", "Juan", "Esteban", "Santiago"
 lista_apellidos = ["Sanchez", "Avila", "Viera", "Chareun", "Ponce de Leon", "Garcia", "Perez"]
 
 3.times do |i|
-  User.create!(email: "cliente#{i+1}@example.com", password: "111111", password_confirmation: "111111", first_name: lista_nombres.sample, last_name: lista_apellidos.sample, city: lista_ciudades.sample, phone_number: Faker::PhoneNumber.cell_phone, role: "cliente", job: ["clientes"], avatar: Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg"))
+  User.create!(email: "cliente#{i+1}@example.com", password: "111111", password_confirmation: "111111", first_name: lista_nombres.sample, last_name: lista_apellidos.sample, city: lista_ciudades.sample, phone_number: Faker::PhoneNumber.cell_phone, role: "cliente", job: ["clientes"], avatar: "")
 end
 
 12.times do |i|
-  User.create!(email: "profesional#{i+1}@example.com", password: "111111", password_confirmation: "111111", first_name: lista_nombres.sample, last_name: lista_apellidos.sample, city: lista_ciudades.sample, phone_number: Faker::PhoneNumber.cell_phone, role: "profesional", job: lista_oficio.sample, validation: random_boolean = [true, false].sample, avatar: Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg"))
+  User.create!(email: "profesional#{i+1}@example.com", password: "111111", password_confirmation: "111111", first_name: lista_nombres.sample, last_name: lista_apellidos.sample, city: lista_ciudades.sample, phone_number: Faker::PhoneNumber.cell_phone, role: "profesional", job: lista_oficio.sample, validation: random_boolean = [true, false].sample, avatar: "")
 end
 
 request1 = Request.create!(title: "Plomero", city: "Tigre", detail: "Necesito cambiar un grifo", user: User.first, professional: User.last)
@@ -35,5 +35,4 @@ review1 = Review.create!(content: "Buen trabajo", rating: 4, user: User.first, r
 
 oficio = lista_oficio.sample
 
-puts oficio
 puts "Seeds creadas!"

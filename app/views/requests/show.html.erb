@@ -7,6 +7,9 @@
     <li>Comentarios del profesional: <%= @request.comment %></li>
     <li>Precio: <%= @request.price %></li>
     <li>Imagen: <%= @request.image %></li>
+    <% @request.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end%>
   </ul>
 
   <% if @request.professional_id != current_user.id %>

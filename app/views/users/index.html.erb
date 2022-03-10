@@ -1,4 +1,4 @@
-<div class="search-users">
+<div id= "search-index" class="search-users">
     <%= form_tag users_path, method: :get do %>
     <i class="fas fa-search" style="position: absolute; z-index: 10; margin-left: 305px; margin-top:12px; color:white;"></i>
     <%= submit_tag "  Buscar", style:"position: absolute; margin-left: 299px;", class: "btn btn-default" %>
@@ -20,7 +20,12 @@
             <div data-aos="fade-right">
               <div class="users-index">
                 <div class="picture">
-                  <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
+                  <% if user.photo.attached? %>
+                    <%= cl_image_tag user.photo.key %>
+                  <% else %>
+                    <%= image_tag "profilepic.png" %>
+                  <% end %>
+                  <%# <img class="img-fluid" src="https://picsum.photos/130/130?image=1027"> %>
                 </div>
                 <div class="users-content">
                   <p id="star" class="fa fa-star" aria-hidden="true"> </p>
