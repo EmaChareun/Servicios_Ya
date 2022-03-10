@@ -1,11 +1,19 @@
+    <%# request.photos.each do |photo| %>
+      <%#= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <%# end%>
 <% requests.each do |request| %>
-  <div class="div">
-    <p> <%= link_to request.title, request_path(request.id)  %> </p>
-    <p> <%= "Dirección: #{request.city}" %> </p>
-    <p> <%= "Detalles: #{request.detail}" %> </p>
-    <% request.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end%>
+  <div class="card-request">
+    <img src="https://res.cloudinary.com/mpdlo/image/upload/v1646918763/production/Recurso_1_g0t3ok.png" />
+    <div class="card-request-infos">
+      <h2><%= "#{request.title}"%></h2>
+      <p> <%= "Dirección: #{request.city}" %> </p>
+      <p> <%= "Detalles: #{request.detail}" %> </p>
+      <%# <button class="btn-grad">Ver Detalles <span> </span>&rarr;</button>
+      <div class="link-ver"> %>
+      <%= link_to 'Ver más detalles', user_path(request.professional_id) , class: 'btn btn-default' %>
+</div>
+    </div>
   </div>
 <% end%>
-
+<br>
+<br>
