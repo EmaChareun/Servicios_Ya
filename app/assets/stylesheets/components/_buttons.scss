@@ -1,14 +1,14 @@
 btn-p{
-  border: 1px solid rgb(219, 33, 33);
+  border: 1px solid $steel-blue;
   transition: 0.5s;
 }
 .btn-default{
   background-color: transparent;
-  border: solid 1px rgb(68, 18, 18);
-  color: $bordo;
+  border: solid 1px $steel-blue;
+  color: $yale-blue;
   transition: all .5s ease;
    &:hover{
-    background-color: $bordo;
+    background-color: $yale-blue;
     color: white;
     transform: scale(1.1);
   }
@@ -18,7 +18,8 @@ btn-p{
   border: solid 1px #555555;
   color: #f8f9fa;
    &:hover{
-    background-color: $bordo;
+    background-color: $steel-blue;
+    border: solid 1.5px $alice-blue;
     color: white;
     transform: scale(1.1);
     transition: transform 0.3s;
