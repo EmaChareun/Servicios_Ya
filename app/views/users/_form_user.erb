@@ -1,13 +1,10 @@
-<div class="container col-4">
-  <%= simple_form_for [@user] do |f| %>
+<%= simple_form_for [@user] do |f| %>
     <%= f.input :role, placeholder: "" %>
-    <%= f.input :first_name, placeholder: "Nombre" %>
-    <%= f.input :last_name, placeholder: "Apellido" %>
-    <%= f.input :city, placeholder: "Dirección" %>
-    <%= f.input :phone_number, placeholder: "Número de teléfono" %>
-    <%= f.input :job, placeholder: "Especialidad" %>
-    <%= f.input :photo, as: :file %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :first_name, label: "Nombre" %>
+    <%= f.input :last_name, label: "Apellido" %>
+    <%= f.input :city, label: "Dirección" %>
+    <%= f.input :phone_number, label: "Número de teléfono" %>
+    <%= f.input :job, label: "Especialidad" %>
+    <%#= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit "Guardar", class: 'btn btn-default' %>
-  <% end %>
-</div>
+<% end %>
