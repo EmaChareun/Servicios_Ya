@@ -1,24 +1,17 @@
 <div class="banner"
   style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/free-photo/empty-red-brick-wall_53876-31790.jpg?w=996);">
-  <div class="titulo-banner">
     <h1>Servicios Ya!</h1>
-  </div>
     <p>La manera más simple de contratar un servicior</p>
     <div class="search">
         <%= form_tag users_path, method: :get, class: "form-search" do %>
-        <%# <i class="fas fa-search" style="position: absolute; z-index: 10; margin-left: 305px; margin-top:10px; color:white;" ></i> %>
-        <%#= submit_tag "  Search", style:"position: relative; margin-left: 299px;", class: "btn btn-default", id: "btn-search" %>
-
         <%= text_field_tag :query,
             params[:query],
-
-
       class: "form-control",
             placeholder: "Buscar por servicio o ubicación"%>
              <%= button_tag(type: "submit", class: "btn btn-default", id: "btn-search") do %>
-            <i class="fas fa-search"></i> Search
+            <i class="fas fa-search"></i> Buscar
         <% end %>
-        <% end%>
+      <% end%>
     </div>
   </div>
 

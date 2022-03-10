@@ -1,7 +1,7 @@
 <div class="search-users">
     <%= form_tag users_path, method: :get do %>
     <i class="fas fa-search" style="position: absolute; z-index: 10; margin-left: 305px; margin-top:12px; color:white;"></i>
-    <%= submit_tag "  Search", style:"position: absolute; margin-left: 299px;", class: "btn btn-default" %>
+    <%= submit_tag "  Buscar", style:"position: absolute; margin-left: 299px;", class: "btn btn-default" %>
     <%= text_field_tag :query,
       params[:query], class: "form-control", placeholder: "Buscar por servicio o ubicación"%>
     <% end%>
