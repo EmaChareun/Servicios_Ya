@@ -7,7 +7,7 @@
     padding: 0;
     list-style: none;
     text-align: center;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.6;
     margin-bottom: 0;
   }
@@ -29,7 +29,6 @@
   .social {
     text-align: center;
     padding-bottom: 25px;
-
     > a {
       font-size: 24px;
       width: 40px;
@@ -47,13 +46,21 @@
         opacity: 0.9;
       }
     }
-  }
 
+  }
   .copyright {
     margin-top: 15px;
     text-align: center;
-    font-size: 13px;
+    font-size: 10px;
     color: #aaa;
     margin-bottom: 0;
   }
+}
+
+.linea {
+  border-top: 1px solid black;
+  height: 1px;
+  max-width: 50%;
+  padding: 0;
+  margin: 10px auto;
 }
