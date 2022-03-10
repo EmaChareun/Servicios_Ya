@@ -1,4 +1,4 @@
-<div class= "container-fluid" id="container-show">
+<div class= "container abc" id="container-show">
   <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
@@ -31,7 +31,7 @@
            <%= "No tiene reseñas" %>
           <% else %>
             <ul>
-              <li>Contenido: <%= request.reviews.first.content %> Rating: <%= request.reviews.first.rating %>
+              <li><%= request.reviews.first.content %> Rating: <%= request.reviews.first.rating %>
                 <p class="fa fa-star" id="estrellas" aria-hidden="true" style= "color:	#EABE3F"> </p>
                 <p class="fa fa-star" id="estrellas" aria-hidden="true" style= "color:	#EABE3F"> </p>
                 <p class="fa fa-star" id="estrellas" aria-hidden="true" style= "color:	#EABE3F"> </p>
@@ -41,6 +41,7 @@
           <% end %>
         <% end %></p>
       </div>
+     </div>
   <% if user_signed_in? == false %>
     <%= link_to 'Crear solicitud', new_user_request_path(@user.id), class: 'btn btn-default' %>
   <% elsif @user.id != current_user.id %>

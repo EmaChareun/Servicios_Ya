@@ -1,19 +1,10 @@
 #container-show{
-  display: flex;
   justify-content: center;
   align-items: center;
-  display: grid;
-
-  .card-body{
-    // background-color: red;
-  }
-
+  margin: 0 auto;
+  align-content: center;
+  width: 600px;
+    li{
+      list-style-type: none;
+    }
 }
-// #card-show{
-//   display: flex;
-//   justify-content: center;
-//   position: relative;
-//   #estrellas{
-//     position: absolute;
-//   }
-// }
