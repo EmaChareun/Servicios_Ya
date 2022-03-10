@@ -1,13 +1,32 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
-  h1,p{
+  padding: 170px 0;
+  position: relative;
+  h1{
     color: white;
+    position: absolute;
+    left: 24.3%;
+    top:85px;
   }
-  .titulo-banner{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  p{
+    color: white;
+    position: absolute;
+    left: 24.3%;
+    top: 125px;
   }
 }
+  // .titulo-banner{
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // }
+  @media(max-width: 768px) {
+    .banner .p {
+      height: 49px;
+      position: absolute;
+      top: 116px;
+      };
+
+    }

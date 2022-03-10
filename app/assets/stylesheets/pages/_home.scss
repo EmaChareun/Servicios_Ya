@@ -1,8 +1,19 @@
 // Specific CSS for your home-page
 .link-ver{
   margin-left: 41%;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 }
 h2{
-  margin-top: 130px;
+  margin-top: 95px;
+}
+@media(max-width: 992px) {
+  .link-ver {
+    margin-left: 40%;
+  }
+}
+
+@media(max-width: 768px) {
+  .link-ver {
+    margin-left: 20%;
+  }
 }
