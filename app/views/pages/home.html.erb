@@ -14,6 +14,9 @@
       <% end%>
     </div>
   </div>
+
+    <br>
+    <br>
   <div class="container-fluid">
     <div class="sombreadora">
     <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -46,17 +49,17 @@
       </button>
       </div>
     </div>
-      <div class="profesionales-destacados">
-        <p class= "text-center">Profesionales destacados </p>
-      </div>
-    <div class="card-users">
+
+  <h2 class= "text-center">Profesionales destacados </h2>
+   <div class="card-users">
       <% 3.times do %>
         <% number_rand = rand(0...@users.size)%>
-         <div class="users-index">
-                <div class="picture">
-                  <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
-                </div>
-          <div class="users-content">
+        <div class="our-team">
+          <div class="picture">
+                    <img class="img-fluid"
+                      src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+            </div>
+          <div class="team-content">
               <h5 class="name"><%= @users[number_rand].first_name %></h5>
               <h6 class="title"> Servicios: </b> <% @users[number_rand].job%></h6>
               <h6 class="location">Ubicación:</b> <%= @users[number_rand].city %></h6>
@@ -66,13 +69,25 @@
               <p class="fa fa-star" aria-hidden="true"> </p>
               <p class="fa fa-star" aria-hidden="true"> </p>
           </div>
-          <ul class="icons">
-            <li><%= link_to user_path(@users[number_rand].id) do %> <i class="fa fa-info-circle"></i> <% end %></li>
-            <li><%= link_to new_user_request_path(@users[number_rand].id) do %><i class="fa fa-envelope"></i><% end %></li>
+          <ul class="social">
+            <%# <li><a href="../users/show.html" class="fa fa-info-circle" aria-hidden="true"></a></li> %>
+           <li>
+              <%= link_to user_path(@users[number_rand].id) do %>
+                  <i class="fa fa-info-circle"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_request_path(@users[number_rand].id) do %>
+                  <i class="fa fa-envelope"></i>
+              <% end %>
+              </li>
           </ul>
+
         </div>
       <% end %>
   </div>
+  <br>
+  <br>
   <div class="link-ver">
     <%= link_to 'Ver todos profesionales', users_path , class: 'btn btn-default' %>
   </div>

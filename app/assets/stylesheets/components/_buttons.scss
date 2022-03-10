@@ -1,15 +1,14 @@
-.btn-p{
-  border: 1px solid $steel-blue;
+btn-p{
+  border: 1px solid rgb(219, 33, 33);
   transition: 0.5s;
 }
-
 .btn-default{
   background-color: transparent;
-  border: solid 1px $steel-blue;
-  color: $yale-blue;
+  border: solid 1px rgb(68, 18, 18);
+  color: $bordo;
   transition: all .5s ease;
    &:hover{
-    background-color: $yale-blue;
+    background-color: $bordo;
     color: white;
     transform: scale(1.1);
   }
@@ -19,8 +18,7 @@
   border: solid 1px #555555;
   color: #f8f9fa;
    &:hover{
-    background-color: $steel-blue;
-    border: solid 1.5px $alice-blue;
+    background-color: $bordo;
     color: white;
     transform: scale(1.1);
     transition: transform 0.3s;

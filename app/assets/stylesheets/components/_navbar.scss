@@ -1,18 +1,15 @@
 .navbar-lewagon {
   justify-content: space-between;
-
-  background: $yale-blue;
-  .dropdown-item {
-    color: $yale-blue;
-    text-transform: none;
-  }
+  background: $yaleblue;
   a {
     position: relative;
     display: block;
-    padding: 4px 4px 0;
+    padding: 4px 0;
+    font-family: Lato, sans-serif;
     text-decoration: none;
     text-transform: uppercase;
     transition: 0.5s;
+
     &::after {
       position: absolute;
       content: "";
@@ -20,15 +17,14 @@
       left: 0;
       width: 100%;
       height: 3px;
-      background: $alice-blue;
+      background: #f1f0f1;
       transform: scaleX(0);
       transform-origin: right;
       transition: transform 0.5s;
     }
 
     &:hover {
-      color: $alice-blue;
-      background: $yale-blue;
+      color: #ff0000;
     }
 
     &:hover::after {
@@ -43,20 +39,10 @@
       width: 40px;
     }
     .nav-item dropdown {
-      background-color: $steel-blue;
+      background-color: black;
     }
+
 }
 .navbar-light .navbar-nav .nav-link {
   color: white;
-  padding-right: 8px;
-  margin-top: 5px;
-}
-
-.container-fluid{
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-#navbarDropdown{
-  margin-left: 10px;
 }
