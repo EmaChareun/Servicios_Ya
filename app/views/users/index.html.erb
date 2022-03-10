@@ -1,12 +1,11 @@
 <div id= "search-index" class="search-users">
     <%= form_tag users_path, method: :get do %>
     <i class="fas fa-search" style="position: absolute; z-index: 10; margin-left: 305px; margin-top:12px; color:white;"></i>
-    <%= submit_tag "  Buscar", style:"position: absolute; margin-left: 299px;", class: "btn btn-default" %>
+    <%= submit_tag "  Buscar", style:"position: absolute; margin-left: 299px;", class: "btn btn-default", id: "btn-search" %>
     <%= text_field_tag :query,
       params[:query], class: "form-control", placeholder: "Buscar por servicio o ubicación"%>
     <% end%>
 </div>
-
 <div class="container index">
   <div class="container d-flex">
     <div class="row">
@@ -14,7 +13,6 @@
         <% if @users.blank? %>
           <p> No se encuentra el profesional </p>
         <% end %>
-        <br>
         <% @users.each do |user| %>
           <% if user_signed_in? == false || user.id != current_user.id %>
             <div data-aos="fade-right">
