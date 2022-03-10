@@ -1,41 +1,30 @@
-.our-team {
+.users-index {
   padding: 30px 0 40px;
   margin-bottom: 30px;
-  background-color: rgb(255, 255, 255);
+  background-color: #ebf2fa;
   text-align: center;
   overflow: hidden;
   position: relative;
   width: 330px;
-  height: 200px;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(49, 49, 49, 0.452);
-  display: flex;
-  justify-content: center;
-  h6{
-    margin-top: -6px;
-  }
-  p{
-    color:	#EABE3F,
-  }
-
 }
 
-.our-team .picture {
+.users-index .picture {
   display: inline-block;
-  height: 90px;
-  width: 90px;
-  margin-bottom: 0px;
+  height: 130px;
+  width: 130px;
+  margin-bottom: 50px;
   z-index: 1;
   position: relative;
-  top: -16px;
 }
 
-.our-team .picture::before {
+.users-index .picture::before {
   content: "";
   width: 100%;
   height: 0;
   border-radius: 50%;
-  background-color: $bordo;
+  background-color: #427AA1;
   position: absolute;
   bottom: 135%;
   right: 0;
@@ -45,23 +34,23 @@
   transition: all 0.3s linear 0s;
 }
 
-.our-team:hover .picture::before {
+.users-index:hover .picture::before {
   height: 100%;
 }
 
-.our-team .picture::after {
+.users-index .picture::after {
   content: "";
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: $bordo;
+  background-color: #427AA1;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
 }
 
-.our-team .picture img {
+.users-index .picture img {
   width: 100%;
   height: auto;
   border-radius: 50%;
@@ -69,42 +58,47 @@
   transition: all 0.9s ease 0s;
 }
 
-.our-team:hover .picture img {
-  box-shadow: 0 0 0 14px #f7f5ec;
+.users-index:hover .picture img {
+  box-shadow: 0 0 0 14px #ebf2fa;
   transform: scale(0.7);
 }
-.team-content{
-  position: absolute;
-  top: 106px;
-  // left: 79px;
-}
-.our-team .title {
+
+.users-index .job, .city {
   display: block;
   font-size: 15px;
   color: #4e5052;
   text-transform: capitalize;
+  margin-bottom: 8px;
 }
 
-.our-team .social {
+.users-index .name {
+  display: block;
+  font-size: 18px;
+  color: #4e5052;
+  text-transform: capitalize;
+  margin-bottom: 1px;
+}
+
+.users-index .icons {
   width: 100%;
   padding: 0;
   margin: 0;
-  background-color: $bordo;
+  background-color: #427AA1;
   position: absolute;
   bottom: -100px;
   left: 0;
   transition: all 0.5s ease 0s;
 }
 
-.our-team:hover .social {
+.users-index:hover .icons {
   bottom: 0;
 }
 
-.our-team .social li {
+.users-index .icons li {
   display: inline-block;
 }
 
-.our-team .social li a {
+.users-index .icons li a {
   display: block;
   padding: 10px;
   font-size: 17px;
@@ -113,11 +107,18 @@
   text-decoration: none;
 }
 
-.our-team .social li a:hover {
-  color: $bordo;
-  background-color: #f7f5ec;
+.users-index .icons li a:hover {
+  color: #427AA1;
+  background-color: #ebf2fa;
 }
 
-#index-content {
-  top: 104px;
+.users-content{
+  position: initial;
+  top: 106px;
+  align-items: center;
+  margin-top: -45px;
+}
+
+#star {
+  color: #064789;
 }
