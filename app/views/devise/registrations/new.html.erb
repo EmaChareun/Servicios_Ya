@@ -23,9 +23,7 @@
                 autofocus: true,
                 input_html: { autocomplete: "Apellido" }%>
     <%= f.input :photo, as: :file,
-                required: true,
                 label: "Foto de perfil",
-                required: true,
                 autofocus: true,
                 prompt: "Foto de perfil",
                 input_html: { autocomplete: "avatar" }%>
@@ -57,9 +55,8 @@
                 autofocus: true,
                 collection: ["A/A", "Albañil",	"Arquitecto",	"Autos",	"Belleza",	"Bienestar",	"Carpintero",	"Cerrajero", "Colocador", "Control de plagas", "Cuidadores",	"Decorador",	"Electricista",	"Gasista",	"Herrero",	"Jardinero",	"Limpieza",	"Mascotas",	"Mudanzas",	"Piletas", "Pintor",	"Plomero", "Reformas",	"Seguridad", "Tapicero",	"Técnico"],
                 input_html: { autocomplete: "job" }%>
-    <%= f.input :photos_professional, as: :file,
+    <%= f.input :photos, as: :file, input_html: {multiple: true},
                 label: "Fotos de tus trabajos",
-                required: true,
                 autofocus: true,
                 prompt: "Fotos de profesional"%>
   </div>

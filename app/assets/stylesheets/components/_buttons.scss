@@ -6,11 +6,11 @@ btn-p{
   background-color: transparent;
   border: solid 1px rgb(68, 18, 18);
   color: $bordo;
+  transition: all .5s ease;
    &:hover{
     background-color: $bordo;
     color: white;
     transform: scale(1.1);
-    transition: transform 0.3s;
   }
  }
  #btn-search{

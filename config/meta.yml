@@ -1,0 +1,5 @@
+meta_product_name: "Servicios Ya!"
+meta_title: "Servicios Ya! La manera más simple de contratar un servicio."
+meta_description: "Encontrá la solución que estás necesitando"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@serviciosya.shop"

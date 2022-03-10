@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :requests
   has_one_attached :photo
-  has_many_attached :photos_professional
+  has_many_attached :photos
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :phone_number, presence: true
