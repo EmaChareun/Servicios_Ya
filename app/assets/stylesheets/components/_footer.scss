@@ -1,10 +1,6 @@
 .footer-basic {
   padding: 20px 0;
-<<<<<<< HEAD
-  background-color: $yale-blue;
-=======
   background-color: $yaleblue;
->>>>>>> 38c2570b9bbe1eeed77ab0e8d49c733d8b177225
   color: #4b4c4d;
 
   ul {
@@ -56,13 +52,13 @@
     margin-top: 10px;
     text-align: center;
     font-size: 10px;
-    color: $alice-blue;
+    color: #aaa;
     margin-bottom: 0;
   }
 }
 
 .linea {
-  border-top: 1px solid $alice-blue;
+  border-top: 1px solid black;
   height: 1px;
   max-width: 50%;
   padding: 0;
