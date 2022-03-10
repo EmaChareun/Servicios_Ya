@@ -1,11 +1,11 @@
 #container-tablero{
-  display: flex;
   justify-content: center;
   align-items: center;
-  display: grid;
-  .pills-tabContent{
-    background-color: #427aa1;
-  }
-
-
+  margin: 0 auto;
+}
+.abc{
+ text-align: center;
+}
+.tab-center{
+  justify-content: center;
 }
