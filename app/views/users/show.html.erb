@@ -1,61 +1,46 @@
-<div class= "container col 6">
-  <br>
+<div class= "container-fluid" id="container-show">
   <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
         <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
           class="img-fluid rounded-start" alt="...">
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8" id="card-body-user">
         <div class="card-body">
           <h3 class="card-title"><%= @user.first_name %></h3>
           <p class="card-text">
             <li> Servicios: <%= @user.job %>
             <li> Ciudad: <%= @user.city %> </li>
             <li> Telefono: <%= @user.phone_number %> </li>
+            <p class="fa fa-star" aria-hidden="true" style= "color:	#EABE3F"> </p>
+            <p class="fa fa-star" aria-hidden="true" style= "color:	#EABE3F"> </p>
+            <p class="fa fa-star" aria-hidden="true" style= "color:	#EABE3F"> </p>
+            <p class="fa fa-star" aria-hidden="true" style= "color:	#EABE3F"> </p>
+            <p class="fa fa-star" aria-hidden="true" style= "color:	#EABE3F"> </p>
           </p>
         </div>
       </div>
     </div>
   </div>
-  <br>
   <h3>Reseñas</h3>
-  <div class="card border-light mb-3" style="max-width: 40rem;">
+  <div class="card border-light mb-3" style="max-width: 40rem;" id="card-show">
     <div class="card-body">
-      <h5 class="card-title">Reseñas del profesional</h5>
+      <h5 class="card-title">Cliente</h5>
         <p class="card-text"><% @my_requests.each do |request| %>
           <% if request.reviews.first.nil? %>
            <%= "No tiene reseñas" %>
           <% else %>
             <ul>
               <li>Contenido: <%= request.reviews.first.content %> Rating: <%= request.reviews.first.rating %>
+                <p class="fa fa-star" id="estrellas" aria-hidden="true" style= "color:	#EABE3F"> </p>
+                <p class="fa fa-star" id="estrellas" aria-hidden="true" style= "color:	#EABE3F"> </p>
+                <p class="fa fa-star" id="estrellas" aria-hidden="true" style= "color:	#EABE3F"> </p>
+                <p class="fa fa-star" id="estrellas" aria-hidden="true" style= "color:	#EABE3F"> </p>
+                <p class="fa fa-star" id="estrellas" aria-hidden="true" style= "color:	#EABE3F"> </p>
             </ul>
           <% end %>
         <% end %></p>
       </div>
-    </div>
-
-    <h3>Trabajos Realizados</h3>
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-         <% @user.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-          <% end %>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-
-  <br>
-  <br>
   <% if user_signed_in? == false %>
     <%= link_to 'Crear solicitud', new_user_request_path(@user.id), class: 'btn btn-default' %>
   <% elsif @user.id != current_user.id %>

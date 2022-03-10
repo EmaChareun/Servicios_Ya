@@ -5,6 +5,6 @@
     <%= f.input :city, label: "Dirección" %>
     <%= f.input :phone_number, label: "Número de teléfono" %>
     <%= f.input :job, label: "Especialidad" %>
-    <%#= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :photo, label: "Foto de Perfil", as: :file %>
     <%= f.submit "Guardar", class: 'btn btn-default' %>
 <% end %>

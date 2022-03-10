@@ -3,7 +3,7 @@
     <%= f.input :title, label: "Título" %>
     <%= f.input :city, label: "Dirección" %>
     <%= f.input :detail, label: "Descripción" %>
-    <%= f.input :photos, label: "Fotos" %>
+    <%= f.input :photos, label: "Fotos", as: :file, input_html: { multiple: true } %>
     <%= f.input :professional_id, as: :hidden, input_html: { value: "#{@user.id}"} %>
     <%= f.submit "Guardar", class: "btn btn-default" %>
   <% end %>
