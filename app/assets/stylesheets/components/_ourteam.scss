@@ -9,6 +9,15 @@
   height: 200px;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(49, 49, 49, 0.452);
+  display: flex;
+  justify-content: center;
+  h6{
+    margin-top: -6px;
+  }
+  p{
+    color:	#EABE3F,
+  }
+
 }
 
 .our-team .picture {
@@ -18,6 +27,7 @@
   margin-bottom: 0px;
   z-index: 1;
   position: relative;
+  top: -16px;
 }
 
 .our-team .picture::before {
@@ -63,7 +73,11 @@
   box-shadow: 0 0 0 14px #f7f5ec;
   transform: scale(0.7);
 }
-
+.team-content{
+  position: absolute;
+  top: 106px;
+  // left: 79px;
+}
 .our-team .title {
   display: block;
   font-size: 15px;

@@ -22,3 +22,11 @@
   // justify-content: center;
   // align-items: center;
   // }
+  @media(max-width: 768px) {
+    .banner .p {
+      height: 49px;
+      position: absolute;
+      top: 116px;
+      };
+
+    }
