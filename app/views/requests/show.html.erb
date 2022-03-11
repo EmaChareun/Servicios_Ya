@@ -29,7 +29,6 @@
     </li>
   </ul>
 
-
   <% if @request.professional_id != current_user.id %>
     <% if @request.reviews.empty? %>
       <%= link_to 'Hacer una reseña', new_request_review_path(@request.id) , class: 'btn btn-default' %>
@@ -40,4 +39,3 @@
     <% end %>
   <% end %>
   <%= link_to 'Editar solicitud', edit_request_path(@request.id) , class: 'btn btn-default' %>
-</div>

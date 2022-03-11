@@ -1,17 +1,19 @@
 .card-request {
   overflow: hidden;
-  height: 160px;
+  height: 200px;
   width: 500px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin-bottom: 40px;
+  border-radius: 15px;
+  margin-top: 20px;
 }
 
 .card-request img {
-  height: 100%;
-  width: 160px;
+  height: 90%;
+  margin-left: 8px;
   object-fit: cover;
 }
 
@@ -20,6 +22,7 @@
   font-weight: bold;
   margin-top: 0px;
   text-decoration: none;
+  text-align: initial;
 }
 
 .card-request p {
@@ -28,6 +31,12 @@
   opacity: .7;
   margin-bottom: 10px;
   margin-top: 8px;
+  overflow: hidden;
+  text-align: initial;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .card-request .card-request-infos {
@@ -55,4 +64,20 @@
    background-position: right center; /* change the direction of the change here */
    color: #fff;
    text-decoration: none;
+ }
+
+ .btn-request {
+  background-color: transparent;
+  border: solid 1px $steel-blue;
+  color: $yale-blue;
+  transition: all .5s ease;
+   &:hover{
+    background-color: $yale-blue;
+    color: white;
+    transform: scale(1.1);
+  }
+ }
+
+ #volver {
+  align-items: center;
  }

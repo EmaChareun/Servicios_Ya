@@ -1,0 +1,22 @@
+.fondo{
+  top: 22%;
+  height: 356px;
+  position: absolute;
+  left: 28%;
+  width: 600px;
+  background-image: url(https://img.freepik.com/foto-gratis/pila-tuercas-tornillos-aislados-fondo-blanco_70287-2638.jpg?size=626&ext=jpg);
+  z-index: -1;
+  opacity: 0.3;
+}
+
+#container-login{
+  width: 600px;
+  // background-image: url(https://img.freepik.com/foto-gratis/pila-tuercas-tornillos-aislados-fondo-blanco_70287-2638.jpg?size=626&ext=jpg);
+  // opacity: 0.6;
+}
+ // https://previews.123rf.com/images/jevee/jevee1512/jevee151200700/49575385-modelo-incons%C3%BAtil-del-vector-con-las-herramientas-fondo-ca%C3%B3tico-con-tornillos-y-tuercas-en-el-fondo-.jpg
+.form-actions{
+  display: flex;
+  justify-content: center;
+  background-color: $steel-blue;
+}
