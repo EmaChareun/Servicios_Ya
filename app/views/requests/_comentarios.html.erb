@@ -1,4 +1,23 @@
-<% @review_by.each do |review| %>
-  <%= review.content %>
-  <p> Aca vamos a ver el comentario si es profesional deberia ver los comentarios que le hicieron a el y si es cliente deberia ver los comentarios que hizo como cliente</p>
-<% end %>
+<div class="container">
+  <% @review_by.each do |review| %>
+      <div class="cards">
+        <div class="card card-1">
+            <div class="card_title">
+              <h3 class="name">
+                <%="#{User.find(review.user_id).first_name}" %>
+              </h3>
+            </div>
+            <p class="card__stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </p>
+            <p class="card__content">
+              <%= review.content %>
+            </p>
+        </div>
+      </div>
+  <% end %>
+</div>

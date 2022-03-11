@@ -1,13 +1,14 @@
 #container-show{
-  display: flex;
+  // display: flex;
   justify-content: center;
   align-items: center;
-  display: grid;
-
-  .card-body{
-    // background-color: red;
-  }
-
+  // display: grid;
+  margin: 0 auto;
+  align-content: center;
+  width: 600px;
+    li{
+      list-style-type: none;
+    }
 }
 // #card-show{
 //   display: flex;
@@ -17,3 +18,7 @@
 //     position: absolute;
 //   }
 // }
+
+.btns-show{
+  margin-left: 108px;
+}
