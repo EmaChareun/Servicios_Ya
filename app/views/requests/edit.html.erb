@@ -25,13 +25,13 @@
           <%= f.input :title, label: "Servicio" %>
           <%= f.input :city, label: "Dirección" %>
           <%= f.input :detail, label: "Descripción" %>
-          <%= f.input :photos, label: "Fotos" %>
+          <%= f.input :photos, label: "Fotos", as: :file, input_html: { multiple: true } %>
           <%= f.input :price, :disabled => true %>
           <%= f.input :comment, placeholder: "Comentario", :disabled => true %>
-          <%= f.submit "Guardar", class: "btn btn-default" %>
+          <%= f.submit "Guardar", id: "volver", class: "btn btn-default" %>
           <%= link_to 'Cancelar solicitud', request_path(@request), id:"cancel-show", class: 'btn btn-default' , method: :delete, data: {confirm: "Estás seguro de borrar?"} %>
         <% end %>
       </div>
      <%end%>
-  <%= link_to 'Volver a búsquedas', users_path, class: 'btn btn-default mt-2' %>
+  <%= link_to 'Volver a búsquedas', users_path, id: "volver", class: 'btn btn-default mt-2' %>
 </div>
