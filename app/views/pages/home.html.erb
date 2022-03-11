@@ -54,7 +54,11 @@
         <% number_rand = rand(0...@users.size)%>
          <div class="users-index">
                 <div class="picture">
-                  <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
+                  <% if @users[number_rand].photo.attached? %>
+                    <%= cl_image_tag @users[number_rand].photo.key %>
+                  <% else %>
+                    <%= image_tag "profilepic.png" %>
+                  <% end %>
                 </div>
           <div class="users-content">
               <h5 class="name"><%= @users[number_rand].first_name %></h5>
