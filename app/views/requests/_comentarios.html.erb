@@ -1,7 +1,7 @@
 <div class="container">
   <% @review_by.each do |review| %>
       <div class="cards">
-        <div class="card card-1">
+        <div class="card card-1" id="card-m">
             <div class="card_title">
               <h3 class="name">
                 <%="#{User.find(review.user_id).first_name}" %>
