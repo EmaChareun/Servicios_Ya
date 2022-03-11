@@ -1,20 +1,34 @@
-<div class="container col-6">
-  <div class="show-request">
-    <div class="show-request-infos">
-      <h1><%= @request.title %></h1>
-      <div class="detalles">
-        <p>Detalles: <%= @request.detail %></p>
-        <p>Dirección: <%= @request.city %></p>
-        <p>Comentarios del profesional: <%= @request.comment %></p>
-        <p>Precio: <%= @request.price %></p>
-        <p>Imagen: <%= @request.image %></p>
-        <% @request.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-        <% end%>
-      <div>
-    </div>
-  </div>
-</div>
+<div class="container col-6 mt-5">
+  <h3>Titulo: <%= @request.title %></h3>
+  <p>Estado: <%= @request.status %></p>
+  <ul>
+    <li>Detalles: <%= @request.detail %></li>
+    <li>Dirección: <%= @request.city %></li>
+    <li>Comentarios del profesional: <%= @request.comment %></li>
+    <li>Precio: <%= @request.price %></li>
+    <li>
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <% @request.photos.each do |photo| %> </p>
+              <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
+            <% end %>
+          </div>
+          <div class="carousel-item">
+            <% @request.photos.each do |photo| %> </p>
+              <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
+            <% end %>
+          </div>
+          <div class="carousel-item">
+            <% @request.photos.each do |photo| %> </p>
+              <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
   <% if @request.professional_id != current_user.id %>
     <% if @request.reviews.empty? %>
       <%= link_to 'Hacer una reseña', new_request_review_path(@request.id) , class: 'btn btn-default' %>
