@@ -1,7 +1,9 @@
 <div class="container">
   <div class="cards">
+  <div class="row">
     <% my_requests.each do |request| %>
-      <div class="card-request">
+    <div class="col-md-12 mt-3">
+      <div class="card-request center-card">
         <img src="https://res.cloudinary.com/mpdlo/image/upload/v1646918763/production/Recurso_1_g0t3ok.png" />
         <div class="card-request-infos">
           <h2><%= link_to request.title, request_path(request.id) %></h2>
@@ -13,6 +15,8 @@
           <% end%>
         </div>
       </div>
+    </div>
     <% end%>
+  </div>
   </div>
 </div>

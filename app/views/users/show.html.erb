@@ -2,8 +2,9 @@
   <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-          class="img-fluid rounded-start" alt="...">
+        <%#= cl_image_tag @user.photo.key %>
+        <%# <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+          class="img-fluid rounded-start" alt="..."> %>
       </div>
       <div class="col-md-8" id="card-body-user">
         <div class="card-body">
@@ -22,16 +23,16 @@
       </div>
     </div>
   </div>
-  <h2 class="text-center">Reseñas</h2>
+  <h2 class="text-center mt-5">Reseñas</h2>
   <div class="card border-light mb-3" style="max-width: 40rem;" id="card-show">
     <div class="card-body">
-      <div class="card_title"> <h3 class= "text-center"> Cliente</h3> </div>
-        <p class="card-text"><% @my_requests.each do |request| %>
-          <% if request.reviews.first.nil? %>
+      <div class="card_title"> <h3 class= "text-center"></h3> </div>
+        <%# <p class="card-text"><% @my_requests.each do |request| %>
+          <% if @my_requests.nil? || @my_requests.first.reviews.nil? %>
            <%= "No tiene reseñas" %>
           <% else %>
             <ul  class= "text-center">
-              <li><%= request.reviews.first.content %> Rating: <%= request.reviews.first.rating %>
+              <li><%= @my_requests.first.reviews.first.content %> Rating: <%= @my_requests.first.reviews.first.rating %>
                <p class="card__stars" >
                 <p class="fa fa-star" class= "text-center" id="estrellas" aria-hidden="true" style= "color:	#EABE3F"> </p>
                 <p class="fa fa-star" id="estrellas" aria-hidden="true" style= "color:	#EABE3F"> </p>
@@ -41,7 +42,7 @@
                </p>
             </ul>
           <% end %>
-        <% end %></p>
+        <%# <% end %></p>
       </div>
 
 </div>

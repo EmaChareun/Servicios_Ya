@@ -8,6 +8,7 @@
   border: solid 1px $steel-blue;
   color: $yale-blue;
   transition: all .5s ease;
+  margin-top: 10px;
    &:hover{
     background-color: $yale-blue;
     color: white;
@@ -18,6 +19,7 @@
   background-color: #555;
   border: solid 1px #555555;
   color: #f8f9fa;
+  margin-top: -1px;
    &:hover{
     background-color: $steel-blue;
     border: solid 1.5px $alice-blue;

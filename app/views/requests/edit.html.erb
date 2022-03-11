@@ -30,8 +30,9 @@
           <%= f.input :comment, placeholder: "Comentario", :disabled => true %>
           <%= f.submit "Guardar", id: "volver", class: "btn btn-default" %>
           <%= link_to 'Cancelar solicitud', request_path(@request), id:"cancel-show", class: 'btn btn-default' , method: :delete, data: {confirm: "Estás seguro de borrar?"} %>
+          <%= link_to 'Volver', requests_path , class: 'btn btn-default' %>
         <% end %>
       </div>
      <%end%>
-  <%= link_to 'Volver a búsquedas', users_path, id: "volver", class: 'btn btn-default mt-2' %>
+  <%# <%= link_to 'Volver a búsquedas', users_path, id: "volver", class: 'btn btn-default mt-2' %>
 </div>
