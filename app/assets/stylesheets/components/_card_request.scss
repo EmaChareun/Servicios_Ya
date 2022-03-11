@@ -1,17 +1,19 @@
 .card-request {
   overflow: hidden;
-  height: 160px;
+  height: 200px;
   width: 500px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin-bottom: 40px;
+  border-radius: 15px;
+  margin-top: 20px;
 }
 
 .card-request img {
-  height: 100%;
-  width: 160px;
+  height: 90%;
+  margin-left: 8px;
   object-fit: cover;
 }
 
