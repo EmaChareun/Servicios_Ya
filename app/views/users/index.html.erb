@@ -6,6 +6,7 @@
       params[:query], class: "form-control", placeholder: "Buscar por servicio o ubicación"%>
     <% end%>
 </div>
+
 <div class="container index">
   <div class="container d-flex">
     <div class="row">
@@ -13,6 +14,7 @@
         <% if @users.blank? %>
           <p> No se encuentra el profesional </p>
         <% end %>
+        <br>
         <% @users.each do |user| %>
           <% if user_signed_in? == false || user.id != current_user.id %>
             <div data-aos="fade-right">
@@ -44,7 +46,6 @@
         <% end %>
       </div>
     </div>
-
     <div class="container map-container">
       <div class="map" style="width: 100%; height: 100vh; margin-top:20px;"
         data-controller="mapbox"
@@ -54,22 +55,4 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-<div class="footer-basic">
-  <footer>
-    <div class="social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a href="#">Home</a></li>
-      <li class="list-inline-item"><a href="#">Servicios</a></li>
-      <li class="list-inline-item"><a href="#">About</a></li>
-      <li class="list-inline-item"><a href="#">Terms</a></li>
-      <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-    </ul>
-    <p class="copyright">Servicios Ya © 2022</p>
-  </footer>
-</div>
+<%= render 'shared/footer' %>
