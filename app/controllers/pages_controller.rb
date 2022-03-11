@@ -4,4 +4,5 @@ class PagesController < ApplicationController
   def home
     @users = User.where(role: "profesional")
   end
+
 end

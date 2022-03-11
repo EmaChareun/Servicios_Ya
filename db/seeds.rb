@@ -13,13 +13,13 @@ puts "Creando seeds"
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-lista_oficio = ["A/A", "Albañil",	"Arquitecto",	"Autos",	"Belleza",	"Bienestar",	"Carpintero",	"Cerrajero", "Colocador", "Control de plagas", "Cuidador",	"Decorador", "Electricista",	"Gasista",	"Herrero",	"Jardinero", "Limpieza",	"Mascotas", "Mudanzas", "Piletas", "Pintor",	"Plomero", "Reformas", "Seguridad", "Tapicero", "Técnico"]
+lista_oficio = ["A/A", "Albañil", "Electricista",	"Gasista", "Plomero"]
 
-lista_ciudades = ["Buenos Aires", "Tigre", "Vicente Lopez", "Don Torcuato", "Quilmes", "Tortuguitas"]
+lista_ciudades = ["Buenos Aires", "Tigre", "Vicente Lopez", "Jose C. Paz", "Don Torcuato", "Tortuguitas"]
 
-lista_nombres = ["Marcos", "Florencia", "Marines", "Juan", "Esteban", "Santiago"]
+lista_nombres = ["Marcos", "Florencia", "Marines", "Juan", "Esteban", "Santiago", "Pedro", "Guillermo", "Nestor"]
 
-lista_apellidos = ["Sanchez", "Avila", "Viera", "Chareun", "Ponce de Leon", "Garcia", "Perez"]
+lista_apellidos = ["Sanchez", "Avila", "Viera", "Chareun", "Ponce de Leon", "Garcia", "Perez", "Gilardoni", "Ford"]
 
 3.times do |i|
   User.create!(email: "cliente#{i+1}@example.com", password: "111111", password_confirmation: "111111", first_name: lista_nombres.sample, last_name: lista_apellidos.sample, city: lista_ciudades.sample, phone_number: Faker::PhoneNumber.cell_phone, role: "cliente", job: ["clientes"], avatar: "")
@@ -32,7 +32,5 @@ end
 request1 = Request.create!(title: "Plomero", city: "Tigre", detail: "Necesito cambiar un grifo", user: User.first, professional: User.last)
 
 review1 = Review.create!(content: "Buen trabajo", rating: 4, user: User.first, request: request1)
-
-oficio = lista_oficio.sample
 
 puts "Seeds creadas!"

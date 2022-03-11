@@ -1,6 +1,4 @@
-
 <div class="trabajos">
-    <br>
     <% my_requests.each do |request| %>
       <div>
         <p> <%= link_to request.title, request_path(request.id) %> </p>
