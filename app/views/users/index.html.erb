@@ -6,6 +6,7 @@
       params[:query], class: "form-control", placeholder: "Buscar por servicio o ubicación"%>
     <% end%>
 </div>
+
 <div class="container index">
   <div class="container d-flex">
     <div class="row">
@@ -13,6 +14,7 @@
         <% if @users.blank? %>
           <p> No se encuentra el profesional </p>
         <% end %>
+        <br>
         <% @users.each do |user| %>
           <% if user_signed_in? == false || user.id != current_user.id %>
             <div data-aos="fade-right">
@@ -54,12 +56,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
 <div class="footer-basic">
   <footer>
     <div class="social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
